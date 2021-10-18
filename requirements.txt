@@ -1,5 +1,6 @@
 jupyter-book==0.9.1
-matplotlib
 numpy
-ghp-import
 pandas
+matplotlib
+scipy
+folium
