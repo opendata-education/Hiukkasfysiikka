@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hiukkasfysiikka &#8212; Hiukkasfysiikka</title>
+    <title>&lt;no title&gt; &#8212; Hiukkasfysiikka</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -42,8 +42,6 @@
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -102,12 +100,7 @@
   Tutustu aiheeseen
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Hiukkasfysiikka
-  </a>
- </li>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="2_CMS-simulaatio.html">
    CMS simulaatio avoimella datalla
@@ -202,23 +195,6 @@
 
             <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/opendata-education/Tyopajat/main?urlpath=tree/materiaali/harjoitukset/1_HiukkasfysiikanTutkimus.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
         </div>
 
         <!-- Table of contents -->
@@ -228,27 +204,7 @@
                 <i class="fas fa-list"></i> Contents
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#hiukkasten-kiihdyttaminen">
-   Hiukkasten kiihdyttäminen
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#hiukkasten-tunnistaminen-datasta">
-   Hiukkasten tunnistaminen datasta
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#hiukkasfysiikan-tutkimus-cern-ssa">
-   Hiukkasfysiikan tutkimus CERN:ssä
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lahteet">
-   Lähteet
-  </a>
- </li>
+                <ul class="simple visible nav section-nav flex-column">
 </ul>
 
             </nav>
@@ -260,101 +216,7 @@
         
               <div>
                 
-  <div class="section" id="hiukkasfysiikka">
-<h1>Hiukkasfysiikka<a class="headerlink" href="#hiukkasfysiikka" title="Permalink to this headline">¶</a></h1>
-<p>Hiukkasfysiikka on fysiikan ala, joka tutkii aineen rakennetta sekä vuorovaiktuksia. Kokeellinen hiukkasfysiikan tutkimus perustuu hiukkasten kiihdyttämiseen ja törmäyttämiseen toisiinsa tai johonkin kiinteään kohteeseen. Tämä voidaan toteuttaa <em>hiukkaskiihdyttimillä</em>. Törmäyksiä tutkitaan <em>hiukkasilmaisimilla</em>.</p>
-<p>Maailman suurin hiukkaskiihdytin, Large Hadron Collider (LHC), sijaitsee CERN:ssä, Euroopan hiukkasfysiikan tutkimuskeskuksessa. LHC on 27 kilometriä pitkä ympyränmuotoinen synkrotronikiihdytin. Se sijaitsee tunnelissa noin 100 metrin syvyydessä Ranskan ja Sveitsin rajalla (kuva 1).</p>
-<p><img alt="title" src="../_images/LHC.png" />
-<em>Kuva 1: LHC ja sitä ympäröivät neljä tutkimusasemaa. [1]</em></p>
-<p>Vuonna 2012 ATLAS ja CMS tutkimusryhmät CERN:ssä ilmoittivat löytäneensä uuden hiukkasen, jonka massa vastasi Higgsin bosonin ennustettua massaa. Higgsin hiukkanen ja sitä vastaava Higgsin kenttä selittävät muiden hiukkasten massan alkuperän. Peter Higgs ja François Englert, jotka ennustivat Higgsin bosonin teoreettisesti, saivat työstään fysiikan Nobelin vuonna 2013.</p>
-<p>Katso CERN:n esittelyvideo alapuolelta.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.lib.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
-<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;i0qjDZH-p7E&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-<iframe
-    width="400"
-    height="300"
-    src="https://www.youtube.com/embed/i0qjDZH-p7E"
-    frameborder="0"
-    allowfullscreen
-></iframe>
-</div></div>
-</div>
-<p>Lisää tietoa mm. CERN:ssä tehtävästä tutkimuksesta ja tutkimuksen tavoitteista löydät CERN:n kotisivuilta https://home.cern/.</p>
-<div class="section" id="hiukkasten-kiihdyttaminen">
-<h2>Hiukkasten kiihdyttäminen<a class="headerlink" href="#hiukkasten-kiihdyttaminen" title="Permalink to this headline">¶</a></h2>
-<p>LHC kiihdyttää pääasiassa protoneja, jotka ovat peräisin vetykaasupullosta. Protoneita tuotetaan poistamalla elektronit vetyatoomeista sähkökentän avulla.</p>
-<p>Kiihdytysprosessi alkaa jo ennen LHC:tä. Ennen LHC:en saapumistaan protonit kiihdytetään ensin sähkö- ja magneettikenttien avulla muissa kiihdyttimissä. Näiden jälkeen protoneiden energia on 450 GeV.  Protonit ohjataan nipuiksi kahteen eri protonisäteeseen. Jokaisessa säteessä on 2808 protoninippua ja jokaisessa nipussa <span class="math notranslate nohighlight">\(1\text{,}2\cdot 10^{11}\)</span> protonia.</p>
-<p>Protonisäteet ohjataan kahteen eri putkeen, joissa protonit kiertävät eri suuntiin. Esikiihdytyksen jälkeen protonit ohjataan suoraan LHC-kiihdyttimeen. Kuvassa 2 näkyy osa avattua LHC-kiihdytinputkea, jonka sisällä näkyvät protoniputket.</p>
-<p><img alt="title" src="../_images/LHC2.jpg" />
-<em>Kuva 2: Avattu osa LHC-kiihdytinputkea. [2]</em></p>
-<p>Hiukkasia törmäytetään, kun vastakkaisiin suuntiin kulkevat protonisäteet törmäävät. Kun kaksi protoninippua ohittavat toisiinsa, tapahtuu kuitenkin vain noin 20 törmäystä. Prononinippujen suuren nopeuden takia LHC:ssä niput ohittavat toisensa kuitenkin noin 40 miljoonaa kertaa sekunnissa. Tämä tarkoittaa 800 miljoonaa törmäystä sekunnissa.</p>
-<p>Törmäyksen maksimienergia on 14 TeV. Käytännössä törmäyksen energia on kuitenkin pienempi, sillä protonien sijaan niiden sisällä olevat kvarkit ja gluonit törmäävät toisiinsa. Näin ollen kaikki protonien energia ei siirry törmäykseen.</p>
-<p>Protonien törmätessä törmäysenergia voi muuttua massaksi (<span class="math notranslate nohighlight">\(E=mc^2\)</span>). On siis mahdollista, että törmäyksessä syntyy uusia hiukkasia. Törmäyksissä syntyneitä hiukkasia tutkimalla ja mittaamalla tutkijat pyrkivät ymmärtämään paremmin esimerkiksi pimeää ainetta, antimateriaa sekä aineen rakennetta. Törmäystä ja siinä syntyviä hiukkasia on visualisoitu kuvassa 3. Nämä hiukkaset on havaittu CMS-ilmaisimella.</p>
-<p><img alt="title" src="../_images/eventdisplay.png" />
-<em>Kuva 3: Törmäyksen visualisointi [3].</em></p>
-<p>Tässä oppimiskokonaisuudessa käytetään ja analysoidaan CMS-kokeen tuottamaa avointa dataa hiukkasten törmäyksistä.
-Katso CMS:n esittelyvideo osoitteesta alapuolelta</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.lib.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
-<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;S99d9BQmGB0&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-<iframe
-    width="400"
-    height="300"
-    src="https://www.youtube.com/embed/S99d9BQmGB0"
-    frameborder="0"
-    allowfullscreen
-></iframe>
-</div></div>
-</div>
-<p>Lisätietoa CMS-koeasemasta ja sen rakenteesta löydät osoitteesta https://cms-docdb.cern.ch/cgi-bin/PublicDocDB/RetrieveFile?docid=12398&amp;filename=SetOfPostersFN_HQ_small_16092014.pdf.</p>
-</div>
-<div class="section" id="hiukkasten-tunnistaminen-datasta">
-<h2>Hiukkasten tunnistaminen datasta<a class="headerlink" href="#hiukkasten-tunnistaminen-datasta" title="Permalink to this headline">¶</a></h2>
-<p>LHC törmäyttää miltei valonnopeudella kulkevia protoneja. Tällaisissa törmäyksissä voi syntyä uusia hiukkasia, joista osa on vakaita ja osa epävakaita. Epävakaat hiukkaset hajoavat spontaanisti jälleen uusiksi hiukkasiksi. Koska epävakaat hiukkaset ovat olemassa vain hyvin lyhyen ajan, eivät hiukkasilmaisimet havaitse niitä. Jotta saisimme tietää, mitä hiukkasia törmäyksessä on syntynyt, meidän tulee tarkastella vakaiden hiukkasten ominaisuuksia. Hiukkasilmaisimien keräämä data kertoo meille syntyneiden hiukkasten energian ja liikemäärän. Näiden suureiden avulla voimme laskea, mikä oli hajonneen hiukkasen massa.</p>
-<p><img alt="" src="https://github.com/cms-opendata-education/cms-jupyter-materials-finnish/blob/master/Kuvat/higgs-4l.png?raw=true" />
-<em>Kuva 3: Higgsin bosonin hajoaminen neljäksi leptoniksi</em></p>
-<p>Kun hiukkasen massa on selvillä, sitä voidaan verrata tunnettujen hiukkasten massaan ja näin selvittää, mikä hiukkanen oli kyseessä. Jos massa ei vastaa mitään tunnettua hiukkasta, voi kyseessä olla täysin uusi hiukkanen. Yksittäinen tapahtuma ei kuitenkaan todista vielä mitään, vaan meidän tulee analysoida valtava määrä törmäyksiä, jotta voimme varmuudella erottaa uuden hiukkasen satunnaisesta taustakohinasta.</p>
-<p>Esimerkiksi alla olevaan kuvaan on valikoitu CMS-ilmaisimella havaituista törmäystapahtumista sellaiset, joissa on syntynyt kaksi myonia. Massa, joka on x-akselilla, on laskettu edellä mainitulla tavalla myonien energian ja liikemäärän perusteella. Vastaavasti y-akselilla on kyseistä massaa vastaavien tapahtumien lukumäärä. Mikäli myonit ovat peräisin samasta hiukkasesta, on tämä massa kyseisen hiukkasen massa. Kuvassa voidaan havaita selkeästi taustasta erottuvia piikkejä, jotka vastaavat tilannetta, missä myonit ovat peräisin tietystä hiukkasesta, esimerkiksi oikeanpuoleisimman piikin tapauksessa Z-bosonista.</p>
-<p><img alt="title" src="https://github.com/cms-opendata-education/cms-jupyter-materials-finnish/blob/master/Kuvat/inv_massa.PNG?raw=true" />
-<em>Kuva 4: Kahden myonin invariantti massa [4]</em></p>
-</div>
-<div class="section" id="hiukkasfysiikan-tutkimus-cern-ssa">
-<h2>Hiukkasfysiikan tutkimus CERN:ssä<a class="headerlink" href="#hiukkasfysiikan-tutkimus-cern-ssa" title="Permalink to this headline">¶</a></h2>
-<p>Alla olevista postereista löydät lisätietoa CERN:ssä tehtävästä hiukkasfysiikan tutkimuksesta.</p>
-<p><img alt="title" src="../_images/fysiikan_tuloksia-1.png" />
-<img alt="title" src="../_images/fysiikan_tuloksia-2.png" />
-<br>
-<img src="../kuvat/fysiikan_tuloksia-1.png" align="center">
-<br>
-<br>
-<img src="../kuvat/fysiikan_tuloksia-2.png" align="center">
-<br></p>
-</div>
-<div class="section" id="lahteet">
-<h2>Lähteet<a class="headerlink" href="#lahteet" title="Permalink to this headline">¶</a></h2>
-<p>[1] P. Mouche, <em>Overall view of the LHC. Vue d’ensemble du LHC</em>, 2014.
-Url: <a class="reference external" href="https://cds.cern.ch/record/1708847">https://cds.cern.ch/record/1708847</a>.</p>
-<p>[2] M. Brice, <em>View of an open LHC interconnection. Vue d’une interconnection ouverte</em>, 2005.
-Url: <a class="reference external" href="https://cds.cern.ch/record/905940">https://cds.cern.ch/record/905940</a>.</p>
-<p>[3] CERN open data portal. Event Display. © CERN, 2014–2019. Url: http://opendata.cern.ch/visualise/events/CMS.</p>
-<p>[4] HLT Dimuon Invariant Mass Distributions in 2017 and 2018 ( CMS DP-2018/055)
-Url: https://twiki.cern.ch/twiki/bin/view/CMSPublic/HLTDiMuon2017and2018.</p>
-</div>
-</div>
-
+  
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
