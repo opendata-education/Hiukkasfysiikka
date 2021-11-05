@@ -4,12 +4,10 @@
 - part: Tutustu aiheeseen
   chapters:
   - file: harjoitukset/1_HiukkasfysiikanTutkimus
+  - file: harjoitukset/cms_data
   - file: harjoitukset/2_CMS-simulaatio
 - part: Alkeet
   chapters:
   - file: harjoitukset/01_LaskeInvarianttiMassa
   - file: harjoitukset/02_HistogramminPiirto
   - file: harjoitukset/03_DatanValitseminenHistogrammiin
-- part: Harjoitukset
-  chapters:
-  - file: harjoitukset/cms_data
