@@ -1,6 +1,10 @@
 # Table of contents
 # Learn more at https://jupyterbook.org/customize/toc.html
 - file: intro
+- part: Tutustu aiheeseen
+  chapters:
+  - file: harjoitukset/1_Hiukkasfysiikan tutkimus
+  - file: harjoitukset/2_CMS-simulaatio
 - part: Harjoitukset
   chapters:
   - file: harjoitukset/cms_data
