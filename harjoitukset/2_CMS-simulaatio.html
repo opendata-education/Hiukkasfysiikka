@@ -1,0 +1,468 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CMS simulaatio avoimella datalla &#8212; Hiukkasfysiikka</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://opendata-education.github.io/Biologia/intro.html/harjoitukset/2_CMS-simulaatio.html" />
+    <link rel="shortcut icon" href="../_static/logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="CMS ja avoin data" href="cms_data.html" />
+    <link rel="prev" title="Mitä on hiukkasfysiikka?" href="1_HiukkasfysiikanTutkimus.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Hiukkasfysiikka</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Tervetuloa avoimen datan pariin
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Tutustu aiheeseen
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_HiukkasfysiikanTutkimus.html">
+   Mitä on hiukkasfysiikka?
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   CMS simulaatio avoimella datalla
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Harjoitukset
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="cms_data.html">
+   CMS ja avoin data
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/harjoitukset/2_CMS-simulaatio.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/opendata-education/Tyopajat"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/opendata-education/Tyopajat/issues/new?title=Issue%20on%20page%20%2Fharjoitukset/2_CMS-simulaatio.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/opendata-education/Tyopajat/main?urlpath=tree/materiaali/harjoitukset/2_CMS-simulaatio.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cms-ilmaisimen-rakenteen-tutkiskelu">
+   CMS ilmaisimen rakenteen tutkiskelu
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#kerrosten-tehtavat">
+     Kerrosten tehtävät
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tormaysten-visualisointi">
+   Törmäysten visualisointi
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aloitetaan-tormayksien-tutkiminen">
+     Aloitetaan törmäyksien tutkiminen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lahteet">
+   Lähteet
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="cms-simulaatio-avoimella-datalla">
+<h1>CMS simulaatio avoimella datalla<a class="headerlink" href="#cms-simulaatio-avoimella-datalla" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://mybinder.org/v2/gh/cms-opendata-education/cms-jupyter-materials-finnish/master?filepath=%2FOppimiskokonaisuudet%2FAvoin-data-hiukkasfysiikassa%2Fcms-simulaatio.ipynb"><img alt="Binder" src="https://mybinder.org/badge.svg" /></a></p>
+<p>Maailman isoin hiukkaskiihdytin LHC (Large Hadron Collider) kiihdyttää CERN:issä protoneita joiden törmäyksistä CMS (Compact Muon Solenoid) kerää dataa. LHC törmäyttää protoni ryppäitä noin 40 miljoonaa kertaa sekunnissa [2], mutta vain osa tapahtumista johtaa suurienergisiin törmäyksiin. Osa törmäyksen energiasta muuttuu massaksi (<span class="math notranslate nohighlight">\(E=mc^2\)</span>) ja muodostuu uusia hiukkasia [4]. Raskaat ja lyhytikäiset hiukkaset hajoavat edelleen kevyempiin hiukkasiin, joita hiukkasilmaisin havaitsee. Tutkijoiden tehtäväksi jää selvittää mitä tapahtui törmäyksen ja mitatun datan välissä. Esimerkiksi Higgsin hiukkasta ilmaisin ei havaitse, mutta sen hajoamisesta syntyviä kevyempiä hiukkasia voidaan mitata.</p>
+<p>Tässä tehtävässä pääset tarkastelemaan aitoa dataa joka on kerätty CMS ilmaisimella. Käytetään visuaalista työkalulla joka löytyy CERN:in avoimen datan portaalista:
+<a class="reference external" href="http://opendata.cern.ch/visualise/events/CMS">http://opendata.cern.ch/visualise/events/CMS</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Vielä nopea katsaus LHC hiukkaskiihdyttimeen ja CMS hiukkasilmaisimeen, videon (2.51min).</span>
+
+<span class="kn">from</span> <span class="nn">IPython.lib.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;pQhbhpU9Wrg&#39;</span><span class="p">)</span>
+<span class="c1">#www.youtube.com/embed/pQhbhpU9Wrg</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="400"
+    height="300"
+    src="https://www.youtube.com/embed/pQhbhpU9Wrg"
+    frameborder="0"
+    allowfullscreen
+
+></iframe>
+</div></div>
+</div>
+<hr class="docutils" />
+<div class="section" id="cms-ilmaisimen-rakenteen-tutkiskelu">
+<h2>CMS ilmaisimen rakenteen tutkiskelu<a class="headerlink" href="#cms-ilmaisimen-rakenteen-tutkiskelu" title="Permalink to this headline">¶</a></h2>
+<p>CMS hiukkasilmaisin on rakenteeltaan kuin sipuli. Jokaisella kerroksella on tärkeä tehtävä törmäyksestä sinkoilevien hiukkasten ratojen määrittämisessä. Avataan visualisointi työkalu <a class="reference external" href="http://opendata.cern.ch/visualise/events/CMS">CMS event display</a> ja ruvetaan tutkimaan CMS:n rakennetta lisäämällä kerroksia vasemman reunan “Detector” valikosta. Parhaan näkymän saa vaihtamalla “Ortographic projecton” asetukseen ja tarkastelemalla ilmaisinlieriötä pohjasta.</p>
+<p><img alt="title" src="../_images/EventDisplay_aloitus.PNG" /></p>
+<div class="section" id="kerrosten-tehtavat">
+<h3>Kerrosten tehtävät<a class="headerlink" href="#kerrosten-tehtavat" title="Permalink to this headline">¶</a></h3>
+<p>Eri hiukkaset vaikuttavat aineen kanssa eri tavoin, eli tarvitaan erilaisia kerroksia mittamaan hiukkasten energioita ja ratoja. Tässä lyhyt tiivistelmä <a class="reference external" href="https://cms-docdb.cern.ch/cgi-bin/PublicDocDB/RetrieveFile?docid=12398&amp;filename=SetOfPostersFN_HQ_small_16092014.pdf">kattavammasta esityksestä.</a></p>
+<ul class="simple">
+<li><p><strong>Jälki-ilmaisin</strong>
+Jälki-ilmaisin koostuu kahden tyyppisisitä pii osista. Jälki-ilmaisin havaitsee varattujen hiukkasten reitit, kun ne vuorovaikuttavat elekromagneettisesti ilmaisimen kanssa. Tarkan paikkadatan avulla voidaan määrittää protonien törmäyskohdat ja syntyneiden raskaampien ydinten hajoamispaikat. Myös hiukkasen radan kaarevuussäteen avulla voidaan laskea sen momentti.</p>
+<ul>
+<li><p><em>Pixel</em> -ilmaisin on rakennettu pienistä piisoluista (65 miljoonaa kappaletta), jotka mittaavat varattujen hiukkasten radat hyvin tarkasti.</p></li>
+<li><p><em>Tracker</em> -kerros on valmistettu piiliuskoista jotka niin ikään mittaavat hiukkasten ratoja.</p></li>
+</ul>
+</li>
+<li><p><strong>Sähkömagneettinen kalorimetri (ECAL)</strong>
+Elektronien ja fotonien energiat saadaan mitattua hyvin tarkasti sillä niiden törmäyks ECAL-kerrokseen aiheuttaa sähkömagneettisen ryöpyn joka mitataan tuikeilmaisimilla. Törmänneen elektronin tai fotonin energia on suoraan verrannollinen tuikeilmaisimien havaitsemaan valon määrään.</p></li>
+<li><p><strong>Hadronikalorimetri (HCAL)</strong>
+Hadronikalorimetri pysäyttää hadroneiksi kutsutut hiukkaset kuten protonit ja netronit. HCAL-kerrokseen saapuvat hadronit menettävät liike-energiaansa hiukkasryöppyihin joiden synnyttämien tuikevalojen avulla saadaan lasketuksi hadronin alkuperäinen energia.</p></li>
+<li><p><strong>Myonijärjestelmä</strong>
+CMS ilmaisin on nimensä (Compact Muon Solenoid) mukaan suunniteltu erityisesti havaitsemaan myoneita. Myonit ovat vaikeasti havaittavia ja ne kulkevatkin ECAL ja HCAL kerrosten läpi pysähtymättä. Kuitenkin positiivisina hiukkasina niiden kulkiessa kaasulla täytettyjen kammioiden läpi (<em>drift tubes</em>) kaasu ionisoituu ja vapautuneet electronit sekä positiiviset ionit kulkeutuvat (<em>Cathode Strip Chambers</em>) anodeille ja katodeile. Signaalin avulla voidaan laskea myonin paikka tietyllä ajanhetkellä. <em>Resistive Plate Chambers</em> ovat myös osa myonijärjestelmää luoden signaalia, joka voidaan siirtää eteenpäin käsiteltäväksi.</p></li>
+</ul>
+<p>Neutriinot havaitaan epäsuorasti liikemäärän säilymisen kautta.</p>
+<p><img alt="title" src="../_images/CMS_Slice.png" /></p>
+<p>(<em>Superconductin</em> <em>Solenoid</em> on todella tehokas solenoidimagneetti joka aiheuttaa CMS:n siäsosiin noin 100,000 kertaan maan magneettikenttää vahvemman magneettikentän. Vahva kenttä saa varattujen hiukkasten liikeradat kaartumaan ja mahdollistaa niiden luokittelun ja liikemäärän määrittämisen.)</p>
+<p>Tarkat kuvaukset eri osien toiminnasta englanniksi: http://cms.web.cern.ch/news/detector-overview</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="tormaysten-visualisointi">
+<h2>Törmäysten visualisointi<a class="headerlink" href="#tormaysten-visualisointi" title="Permalink to this headline">¶</a></h2>
+<p>Event Displayn avulla voi tarkastella CMS-mittausaseman todellisia tuloksia. Tässä tehtävässä käytetään protonitörmäyksistä kerättyä dataa, joka sittemmin johti Higgsin hiukkasen löytämiseen vuonna 2012.</p>
+<div class="section" id="aloitetaan-tormayksien-tutkiminen">
+<h3>Aloitetaan törmäyksien tutkiminen<a class="headerlink" href="#aloitetaan-tormayksien-tutkiminen" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>Avaa <a class="reference external" href="http://opendata.cern.ch/visualise/events/CMS">CMS event display</a></p></li>
+<li><p>Paina vasemmasta yläkulmasta <span class="math notranslate nohighlight">\(\color{green}{\text{Open file}}\)</span></p></li>
+<li><p>Valitse <span class="math notranslate nohighlight">\(\color{green}{\text{Open file(s)}}\)</span></p></li>
+<li><p>Valitse  <span class="math notranslate nohighlight">\(\color{green}{\text{HiggsCandidates/}}\)</span></p></li>
+<li><p>Valitse toinen mahdollisista Higgsin bosonin hajoamistavoista</p></li>
+</ol>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(\color{green}{\text{4lepton.ig}}\)</span> nimisissä tiedostoissa syntyy neljä leptonia. Niissä saattaa esiintyä Higgsin hajoaminen kahdeksi Z bosoniksi, jotka edelleen hajoavat joko elektroni/positroni (<span class="math notranslate nohighlight">\(e^- e^+\)</span>) tai myoni/antimyoni (<span class="math notranslate nohighlight">\(\mu^- \mu^+\)</span>) pareiksi. Syntyy siis yhteensä neljä leptonia.</p>
+</div></blockquote>
+<a class="reference internal image-reference" href="../_images/higgs-4l.png"><img alt="../_images/higgs-4l.png" class="align-center" src="../_images/higgs-4l.png" style="width: 200px;" /></a>
+<a class="reference internal image-reference" href="../_images/higgs-2photon.png"><img alt="../_images/higgs-2photon.png" class="align-center" src="../_images/higgs-2photon.png" style="width: 200px;" /></a>
+<blockquote>
+<div><p>Jos taas valitsit <span class="math notranslate nohighlight">\(\color{green}{\text{diphoton.ig}}\)</span> tiedoston, valitse  <span class="math notranslate nohighlight">\(\color{orange}{\text{Physics}}\)</span> otsikon alta  <span class="math notranslate nohighlight">\(\color{orange}{\text{Photons}}\)</span> näkyviksi. Valinta on mahdollinen vain mikäli kyseisellä ajolla CMS todella havaitsi fotoneita.
+- Löydätkö kaksi fotonia? Voisivatko ne olla peräisin Higgsin hajoamisesta?
+- Tutki mihin ilmaisimen kerrokseen fotonien liike pysähtyy. Vastaako tulos kerrosten kuvauksia?</p>
+</div></blockquote>
+<p>Kokeile eri datalla ja vertaa tuloksia.</p>
+<hr class="docutils" />
+<p>Vuonna 2012 Atlaksen ja CMS:n tutkiat julkistivat löytäneensä Higsin bosonin. Teoreettisesti sen olemassaolo oli jo ennustettu, muttaa kokeellisesti se havaittiin ensimmäisen kerran LHC kiihdyttimen monen vuoden datan avulla. Higgsin bosoni täydentää standardimallia, muttei tee siitä ns. “kaiken teoriaa”. CMS hiukkasilmaisimen tuottamaa dataa tutkitaan tauotta CERN:issä ja yliopistoissa ympäri maailmaa. Dataa tutkimalla tutkijat pyrkivät ymmärtämään paremmin aineen rakennetta ja esimerkiksi pimeän aineen ja antimateriaalin luonnetta.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.lib.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;0QPTzogoJ-Q&#39;</span><span class="p">)</span>
+<span class="c1">#https://youtu.be/0QPTzogoJ-Q</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="400"
+    height="300"
+    src="https://www.youtube.com/embed/0QPTzogoJ-Q"
+    frameborder="0"
+    allowfullscreen
+
+></iframe>
+</div></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="lahteet">
+<h2>Lähteet<a class="headerlink" href="#lahteet" title="Permalink to this headline">¶</a></h2>
+<p>[1] CMS koeasema, Diat suomeksi, Luettu 2019.
+Url: <a class="reference external" href="https://cms-docdb.cern.ch/cgi-bin/PublicDocDB/RetrieveFile?docid=12398&amp;filename=SetOfPostersFN_HQ_small_16092014.pdf">https://cms-docdb.cern.ch/cgi-bin/PublicDocDB/RetrieveFile?docid=12398&amp;filename=SetOfPostersFN_HQ_small_16092014.pdf</a>.</p>
+<p>[2] Detector overview. © Copyright CERN (2008-2014)
+Url: <a class="reference external" href="http://cms.web.cern.ch/news/detector-overview">http://cms.web.cern.ch/news/detector-overview</a></p>
+<p>[3] CMS Guide to education use of CMS Open Data
+Url: <a class="reference external" href="http://opendata.cern.ch/docs/cms-guide-for-education">http://opendata.cern.ch/docs/cms-guide-for-education</a></p>
+<p>[4] 12 steps - From idea to discovery, luettu 2019
+Url: <a class="reference external" href="https://home.cern/science/physics/12-steps-idea-discovery">https://home.cern/science/physics/12-steps-idea-discovery</a></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./harjoitukset"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="1_HiukkasfysiikanTutkimus.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Mitä on hiukkasfysiikka?</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="cms_data.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">CMS ja avoin data</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By HIP Education and Open Data Team<br/>
+        
+          <div class="extra_footer">
+            <div>
+<a>Toteutettu Opetushallituksen valtionavustuksella tiedekasvatuksen edistämiseen.</a></br><a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img class="license" alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> Tämän sivuston materiaali on käytettävissä seuraavalla lisenssillä: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY 4.0.</a>
+</div>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
