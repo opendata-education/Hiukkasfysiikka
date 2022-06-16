@@ -1,13 +1,15 @@
 # Table of contents
 # Learn more at https://jupyterbook.org/customize/toc.html
-- file: intro
-- part: Tutustu aiheeseen
-  chapters:
+format: jb-book
+root: intro
+chapters:
+- file: harjoitukset/tutustu_aiheeseen
+  sections:
   - file: harjoitukset/1_HiukkasfysiikanTutkimus
   - file: harjoitukset/cms_data
   - file: harjoitukset/2_CMS-simulaatio
-- part: Alkeet
-  chapters:
+- file: harjoitukset/alkeet
+  sections:
   - file: harjoitukset/01_LaskeInvarianttiMassa
   - file: harjoitukset/02_HistogramminPiirto
   - file: harjoitukset/03_DatanValitseminenHistogrammiin
