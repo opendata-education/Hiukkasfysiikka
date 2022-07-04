@@ -493,7 +493,7 @@ title="Print to PDF"
  <br><hr class="docutils" />
 <section id="datan-hakeminen">
 <h3>Datan hakeminen<a class="headerlink" href="#datan-hakeminen" title="Permalink to this headline">#</a></h3>
-<p>Tarkoituksenamme on piirtää invariantin massan histogrammi CMS:n avoimesta datasta vuodelta 2011. Dataan on valikoitu tapahtumia joissa syntyy kaksi suurienergistä myonia [1]. Data on tallennettu csv muotoon tiodostoon ‘Zmumu_Run2011A.csv’[2]. Histogrammin piirtämistä varten meidän tulee kuitenkin laskea jokaiselle tapahtumalle invariantti massa. Alustetaan lasku hakemalla käyttämämme data sekä tarvittavat moduulit (eli koodikirjastot, jotka mahdollistavat valmiiksi määriteltyjen funktioiden käytön).</p>
+<p>Tarkoituksenamme on piirtää invariantin massan histogrammi CMS:n avoimesta datasta vuodelta 2011. Dataan on valikoitu tapahtumia joissa syntyy kaksi suurienergistä myonia. Data on tallennettu csv-muotoon tiedostoon ‘Zmumu.csv’ [1]. Kyseisessä tiedostossa on laskettu jo valmiiksi invariantti massa, mutta lasketaan se muiden muuttujien avulla harjoituksen vuoksi. Alustetaan lasku hakemalla käyttämämme data sekä tarvittavat moduulit (eli koodikirjastot, jotka mahdollistavat valmiiksi määriteltyjen funktioiden käytön).</p>
 <p>Muista. että voit ajaa koodisolun klikkaamalla sen aktiiviseksi ja painamalla CTRL+ENTER.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -504,7 +504,7 @@ title="Print to PDF"
 
 <span class="c1"># Haetaan data ja tallennetaan se muuttujaan &#39;datasetti&#39;. Data voidaan hakea tiedostosta pandas-moduulin</span>
 <span class="c1"># read_csv() -funktiolla. Sulkeiden sisään kirjoitetaan datatiedoston polku.</span>
-<span class="n">datasetti</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/cms-opendata-education/cms-jupyter-materials-finnish/master/Data/Zmumu_Run2011A.csv&#39;</span><span class="p">)</span> <span class="c1">#(&#39;../../Data/Zmumu_Run2011A.csv&#39;)</span>
+<span class="n">datasetti</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;http://opendata.cern.ch/record/307/files/Zmumu.csv&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -537,107 +537,143 @@ title="Print to PDF"
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>Type</th>
       <th>Run</th>
       <th>Event</th>
+      <th>E1</th>
+      <th>px1</th>
+      <th>py1</th>
+      <th>pz1</th>
       <th>pt1</th>
       <th>eta1</th>
       <th>phi1</th>
       <th>Q1</th>
-      <th>dxy1</th>
-      <th>iso1</th>
+      <th>E2</th>
+      <th>px2</th>
+      <th>py2</th>
+      <th>pz2</th>
       <th>pt2</th>
       <th>eta2</th>
       <th>phi2</th>
       <th>Q2</th>
-      <th>dxy2</th>
-      <th>iso2</th>
+      <th>M</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>165617</td>
-      <td>74969122</td>
-      <td>54.7055</td>
-      <td>-0.432396</td>
-      <td>2.574210</td>
+      <td>GT</td>
+      <td>148031</td>
+      <td>10507008</td>
+      <td>82.201866</td>
+      <td>-41.195288</td>
+      <td>17.433244</td>
+      <td>-68.964962</td>
+      <td>44.7322</td>
+      <td>-1.217690</td>
+      <td>2.741260</td>
       <td>1</td>
-      <td>-0.074544</td>
-      <td>0.499921</td>
-      <td>34.2464</td>
-      <td>-0.988480</td>
-      <td>-0.498704</td>
+      <td>60.621875</td>
+      <td>34.144437</td>
+      <td>-16.119525</td>
+      <td>-47.426984</td>
+      <td>38.8311</td>
+      <td>-1.05139</td>
+      <td>-0.440873</td>
       <td>-1</td>
-      <td>0.071222</td>
-      <td>3.42214</td>
+      <td>82.462692</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>165617</td>
-      <td>75138253</td>
-      <td>24.5872</td>
-      <td>-2.052200</td>
-      <td>2.866570</td>
+      <td>TT</td>
+      <td>148031</td>
+      <td>10507008</td>
+      <td>62.344929</td>
+      <td>35.118050</td>
+      <td>-16.570362</td>
+      <td>-48.775247</td>
+      <td>38.8311</td>
+      <td>-1.051390</td>
+      <td>-0.440873</td>
       <td>-1</td>
-      <td>-0.055437</td>
-      <td>0.000000</td>
-      <td>28.5389</td>
-      <td>0.385163</td>
-      <td>-1.991170</td>
+      <td>82.201866</td>
+      <td>-41.195288</td>
+      <td>17.433244</td>
+      <td>-68.964962</td>
+      <td>44.7322</td>
+      <td>-1.21769</td>
+      <td>2.741260</td>
       <td>1</td>
-      <td>0.051477</td>
-      <td>0.00000</td>
+      <td>83.626204</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>165617</td>
-      <td>75887636</td>
-      <td>31.7386</td>
-      <td>-2.259450</td>
-      <td>-1.332290</td>
+      <td>GT</td>
+      <td>148031</td>
+      <td>10507008</td>
+      <td>62.344929</td>
+      <td>35.118050</td>
+      <td>-16.570362</td>
+      <td>-48.775247</td>
+      <td>38.8311</td>
+      <td>-1.051390</td>
+      <td>-0.440873</td>
       <td>-1</td>
-      <td>0.087917</td>
-      <td>0.000000</td>
-      <td>30.2344</td>
-      <td>-0.468419</td>
-      <td>1.883310</td>
+      <td>81.582778</td>
+      <td>-40.883323</td>
+      <td>17.299297</td>
+      <td>-68.447255</td>
+      <td>44.7322</td>
+      <td>-1.21769</td>
+      <td>2.741260</td>
       <td>1</td>
-      <td>-0.087639</td>
-      <td>0.00000</td>
+      <td>83.308465</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>165617</td>
-      <td>75779415</td>
-      <td>39.7394</td>
-      <td>-0.712338</td>
-      <td>-0.312266</td>
-      <td>1</td>
-      <td>0.058481</td>
-      <td>0.000000</td>
-      <td>48.2790</td>
-      <td>-0.195625</td>
-      <td>2.970320</td>
+      <td>GG</td>
+      <td>148031</td>
+      <td>10507008</td>
+      <td>60.621875</td>
+      <td>34.144437</td>
+      <td>-16.119525</td>
+      <td>-47.426984</td>
+      <td>38.8311</td>
+      <td>-1.051390</td>
+      <td>-0.440873</td>
       <td>-1</td>
-      <td>-0.049201</td>
-      <td>0.00000</td>
+      <td>81.582778</td>
+      <td>-40.883323</td>
+      <td>17.299297</td>
+      <td>-68.447255</td>
+      <td>44.7322</td>
+      <td>-1.21769</td>
+      <td>2.741260</td>
+      <td>1</td>
+      <td>82.149373</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>165617</td>
-      <td>75098104</td>
-      <td>41.2998</td>
-      <td>-0.157055</td>
-      <td>-3.040770</td>
+      <td>GT</td>
+      <td>148031</td>
+      <td>105238546</td>
+      <td>41.826389</td>
+      <td>22.783582</td>
+      <td>15.036444</td>
+      <td>-31.689894</td>
+      <td>27.2981</td>
+      <td>-0.990688</td>
+      <td>0.583351</td>
       <td>1</td>
-      <td>-0.030463</td>
-      <td>1.228040</td>
-      <td>43.4508</td>
-      <td>0.590958</td>
-      <td>-0.042756</td>
+      <td>49.760726</td>
+      <td>-20.177373</td>
+      <td>-9.354149</td>
+      <td>44.513955</td>
+      <td>21.8913</td>
+      <td>1.44434</td>
+      <td>-2.707650</td>
       <td>-1</td>
-      <td>0.044175</td>
-      <td>0.00000</td>
+      <td>90.469123</td>
     </tr>
   </tbody>
 </table>
@@ -646,44 +682,22 @@ title="Print to PDF"
 <p>Haetussa datassa on monta tapahtumaa (event), joista jokaisesta on tallennettu useita arvoja. Tehtävän kannalta oleellisimpia ovat,</p>
 <ul class="simple">
 <li><p><strong>Run</strong> ja <strong>Event</strong> : kertovat mistä törmäyksestä kyseisen rivin data on peräisin.</p></li>
-<li><p><strong>pt</strong> : <span class="math notranslate nohighlight">\(p_T\)</span> on kyseisen myonin (1 tai 2) kohtisuora liikemäärä hiukkassuihkua vastaan.</p></li>
-<li><p><strong>eta</strong> : <span class="math notranslate nohighlight">\(\eta\)</span> on pseudorapiditeetti, johon palataan tarkemmin tehtävissä 5 ja 6</p></li>
-<li><p><strong>phi</strong> : <span class="math notranslate nohighlight">\(\phi\)</span> (atsimuuttikulma) on kulma jonka suuntaa hiukkanen kulkee jos detektoria tarkastellaan hiukkassuihkun akselilta</p></li>
-<li><p><strong>Q</strong> : on myonin varaus. Jokaisessa dataan valitussa törmäyksessä syntyy myoni ja antimyoni (<span class="math notranslate nohighlight">\(\mu^+ , \mu^-\)</span>) [1].</p></li>
+<li><p><strong>E</strong> : kyseisen myonin (1 tai 2) energia.</p></li>
+<li><p><strong>px,py,pz</strong>: myonin liikemäärän komponentit.</p></li>
 </ul>
 </section>
 <hr class="docutils" />
 <section id="invariantin-massan-laskeminen">
 <h3>Invariantin massan laskeminen<a class="headerlink" href="#invariantin-massan-laskeminen" title="Permalink to this headline">#</a></h3>
-<p>Käytetään laskussa seuraavaa lauseketta invariantille massalle <span class="math notranslate nohighlight">\(M\)</span>. Lausekkeessa <span class="math notranslate nohighlight">\(p_T\)</span> on liikemäärän hiukkassuihkua vastaan kohtisuora komponentti, <span class="math notranslate nohighlight">\(\eta\)</span> pseudorapiditeetti ja <span class="math notranslate nohighlight">\(\phi\)</span> atsimuuttikulma:</p>
+<p>Käytetään laskussa seuraavaa lauseketta invariantille massalle <span class="math notranslate nohighlight">\(M\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[ M = \sqrt{(E_1 + E_2)^2 - \|\textbf{p}_1 + \textbf{p}_2 \| ^2} = \sqrt{(E_1+E_2)^2-((p_{1_x}+p_{2_x})^2+(p_{1_y}+p_{2_y})^2+(p_{1_z}+p_{2_z})^2)},\]</div>
+<p>missä <span class="math notranslate nohighlight">\(\textbf{p}\)</span> sisältää liikemäärän kaikki komponentit. Yllä oleva lauseke antaa meille tarkan arvon invariantille massalle, ja käytetään sitä aina kun mahdollista.</p>
+<p>Joistakin dataseteistä ei kuitenkaan löydy liikemäärän komponentteja suoraan. Tällöin voidaan käyttää approksimaatiota, joka sopii tilanteisiin, joissa E &gt;&gt; m (kuten kiihdyttimissä tuppaa olemaan). Tässä lausekkeessa <span class="math notranslate nohighlight">\(p_T\)</span> on liikemäärän hiukkassuihkua vastaan kohtisuora komponentti, <span class="math notranslate nohighlight">\(\eta\)</span> pseudorapiditeetti ja <span class="math notranslate nohighlight">\(\phi\)</span> atsimuuttikulma:</p>
 <div class="math notranslate nohighlight">
 \[M = \sqrt{2p_{T1}p_{T2}(\cosh(\eta_1-\eta_2)-\cos(\phi_1-\phi_2))}.\]</div>
-<p>Edellinen yhtälö tosin on approksimaatio tilanteisiin, joissa E &gt;&gt; m (kuten kiihdyttimissä tuppaa olemaan). Onnekkaasti invariantin massan voi laskea tarkkaan myös kaavalla</p>
-<div class="math notranslate nohighlight">
-\[ M = \sqrt{(E_1 + E_2)^2 - \|\textbf{p}_1 + \textbf{p}_2 \| ^2},\]</div>
-<p>missä <span class="math notranslate nohighlight">\(\textbf{p}\)</span> siis sisältää liikemäärän kaikki komponentit. Todennäköisesti törmäät tähän tapaan muissa harjoituksissa. Tällä kertaa käytetään kuitenkin ylempää kaavaa, sillä kaikki sen muuttujat löytyvät hakemastamme datasta suoraan.</p>
-<p>Alla olevassa laskussa käytämme apuna <em>numpy</em>-moduulia, jonka nimesimme yllä <em>np</em>:ksi. Moduulin avulla voimme suorittaa matemaattisia komentoja, esimerkiksi <em>sqrt</em> ja <em>cosh</em> kutsumalla ensin moduulin nimeä ja pisteellä erottaen komentoa (esimerkiksi <em>np.sqrt</em>). Koodissa esiintyvät pt1, pt2, eta1, eta2, phi1 ja phi2 viittaavat hakemamme datan suureiden nimiin.</p>
-<p>Nyt voimme laskea invariatin massan arvot eri tapahtumille. <em>Numpy</em>-moduuli osaa atuomaattisesti laskea arvot kaikille tapahtumille, kun annamme laskun sille muodossa, jossa esiintyy yllä mainitut viitteet suureiden nimiin. Tällöin siis lasku lasketaan jokaiselle riville erikseen.</p>
-<p>Tehtävänäsi on kirjoittaa koodi, joka laskee invariantin massan datan sisältämistä parametreista. Apuna voit käyttää numpy-moduulia. Oheisesta taulukosta näet, miten voit kirjoittaa kaavassa tarvittavat funktiot numpy-moduulin avulla (laita funktion argumentti sulkeiden sisään):</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="text-align:left head"><p>Funktio</p></th>
-<th class="text-align:left head"><p>Numpy-merkintä</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-align:left"><p>neliöjuuri</p></td>
-<td class="text-align:left"><p>np.sqrt()</p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:left"><p>kosini</p></td>
-<td class="text-align:left"><p>np.cos()</p></td>
-</tr>
-<tr class="row-even"><td class="text-align:left"><p>hyperbolinen kosini</p></td>
-<td class="text-align:left"><p>np.cosh()</p></td>
-</tr>
-</tbody>
-</table>
-<p>Datassa esiintyviin muuttujiin pääset käsiksi kirjoittamalla ‘<em>datasetti.muuttuja</em>’. Esimerkiksi, jos haluat valita datasetistä kaikki myonin 1 pseudorapiditeetin arvot, voit kirjoittaa koodisoluun ‘<em>datasetti.eta1</em>’.</p>
+<p>Alla olevassa laskussa käytämme apuna <em>numpy</em>-moduulia, jonka nimesimme yllä <em>np</em>:ksi. Moduulin avulla voimme suorittaa matemaattisia komentoja, esimerkiksi <em>sqrt</em> ja <em>cosh</em> kutsumalla ensin moduulin nimeä ja pisteellä erottaen komentoa (esimerkiksi <em>np.sqrt</em>). Voimme myös helposti käyttää potensseja ilman <em>numpy</em>-kirjastoa käyttämällä **-operaattoria (esim. x² kirjoitetaan x**2).</p>
+<p>Nyt voimme laskea invariatin massan arvot eri tapahtumille. Datassa esiintyviin muuttujiin pääset käsiksi kirjoittamalla ‘<em>datasetti.muuttuja</em>’. Esimerkiksi, jos haluat valita datasetistä kaikki myonin 1 energian arvot, voit kirjoittaa koodisoluun ‘<em>datasetti.E1</em>’.</p>
 <blockquote>
 <div><p>Laske kaikille tapahtumille invariantti massa ja tallenna ne muuttujaan ‘invariantti_massa’
 <br>
@@ -743,9 +757,7 @@ Miksi noin 90 GeV kohdalla on enemmän tapahtumia kuin muualla?</p>
 </section>
 <section id="lahteet">
 <h3>Lähteet<a class="headerlink" href="#lahteet" title="Permalink to this headline">#</a></h3>
-<p>[1] Thomas McCauley (2016). Zmumu. Jupyter Notebook file.
-Url: https://github.com/tpmccauley/cmsopendata-jupyter/blob/hst-0.1/Zmumu.ipynb</p>
-<p>[2]  CMS collaboration (2016). DoubleMu primary dataset in AOD format from RunA of 2011 (/DoubleMu/Run2011A-12Oct2013-v1/AOD). CERN Open Data Portal. DOI: <a class="reference external" href="http://doi.org/10.7483/OPENDATA.CMS.RZ34.QR6N">10.7483/OPENDATA.CMS.RZ34.QR6N</a>.</p>
+<p>[1]  McCauley, Thomas; (2014). Z to two muons from 2010. CERN Open Data Portal. <a class="reference external" href="http://doi.org/10.7483/OPENDATA.CMS.XBN9.HFGT">DOI:10.7483/OPENDATA.CMS.XBN9.HFGT</a></p>
 <p>[3] Hiukkasfysiikan sanastoa englanniksi
 Url: https://atlas.cern/glossary</p>
 <p>[4] Determination of the off-shell Higgs boson signal strength in the high-mass ZZ final state with the ATLAS detector.
