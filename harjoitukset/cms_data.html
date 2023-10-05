@@ -443,7 +443,8 @@ document.write(`
                   
   <section id="cms-ja-avoin-data">
 <h1>CMS ja avoin data<a class="headerlink" href="#cms-ja-avoin-data" title="Permalink to this heading">#</a></h1>
-<p>CERN:issä tuotetaan valtavat määrät dataa jatkuvasti. Compact Muon Solenoid (eli CMS) -koe on julkaissut omaansa avoimeen jakoon hirvittäviä määriä ja seuraavan vuosikymmenen mittaan laitetaan loputkin. Tutustutaan tässä harjoitteessa tapoihin, joilla voidaan tarkastella mitä näistä mittauksista voitaisiin selvittää. Tämä tarjoaa oppilaille mainion tilaisuuden kokeilla oikean tieteen metodeja autenttisilla mittaustuloksilla.</p>
+<p>CERNissä tuotetaan valtavat määrät dataa jatkuvasti. Compact Muon Solenoid (eli CMS) -koe on julkaissut omaansa avoimeen jakoon hirvittäviä määriä vuodesta 2014 lähtien ja seuraavan vuosikymmenen mittaan laitetaan loputkin. Vuoden 2023 aikana lähes kaikki ensimmäisten LHC-ajojen aikaiset havainnot löytyvät CERNin avoimen datan portaalista (https://opendata.cern.ch/).</p>
+<p>Tutustutaan tässä harjoitteessa tapoihin, joilla voidaan tarkastella mitä näistä mittauksista voitaisiin selvittää. Tämä tarjoaa opiskelijoille mainion tilaisuuden puuhastella autenttisen huippututkimuksen aineistojen parissa.</p>
 <section id="kaytetty-data">
 <h2>1. Käytetty data<a class="headerlink" href="#kaytetty-data" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
@@ -454,11 +455,7 @@ document.write(`
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">random</span> <span class="k">as</span> <span class="nn">rand</span>
 <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span>
-<span class="kn">import</span> <span class="nn">matplotlib.mlab</span> <span class="k">as</span> <span class="nn">mlab</span>
-
-<span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 </div>
 </div>
@@ -674,14 +671,14 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Suoritetaan histogrammin piirtäminen:</span>
 
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">kaksoismyonit</span><span class="o">.</span><span class="n">M</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">kaksoismyonit</span><span class="o">.</span><span class="n">M</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
 
 <span class="c1"># Näillä riveillä ainoastaan määritellään otsikko sekä akseleiden tekstit.</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Invariantti massa [GeV/c²]&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Tapahtumien lukumäärä&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Kahden myonin invariantin massan histogrammi </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span> <span class="c1"># \n luo uuden rivin otsikon muotoilua varten</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Invariantti massa [GeV/c²]&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Tapahtumien lukumäärä&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Kahden myonin invariantin massan histogrammi </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span> <span class="c1"># \n luo uuden rivin otsikon muotoilua varten</span>
 
 <span class="c1"># Tehdään kuvaaja näkyväksi.</span>
 
@@ -690,7 +687,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0adcc4e29068ab2a4dc13833e7f3adda5b80aac97de55efe0574a40095328ea9.png" src="../_images/0adcc4e29068ab2a4dc13833e7f3adda5b80aac97de55efe0574a40095328ea9.png" />
+<img alt="../_images/a565eddc19c71e75462a3a188441c726728f51640dde4d4abd19d51f409b3967.png" src="../_images/a565eddc19c71e75462a3a188441c726728f51640dde4d4abd19d51f409b3967.png" />
 </div>
 </div>
 <p>Signaalista nähdään monia asioita, mutta tarkastellaan yhtä kiinnostavaa huippua 80-100 GeVin kieppeillä rajaamalla kuvaajaa.</p>
@@ -698,14 +695,14 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Suoritetaan histogrammin piirtäminen:</span>
 
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">kaksoismyonit</span><span class="o">.</span><span class="n">M</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span><span class="mi">100</span><span class="p">))</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">kaksoismyonit</span><span class="o">.</span><span class="n">M</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">300</span><span class="p">,</span> <span class="nb">range</span> <span class="o">=</span> <span class="p">(</span><span class="mi">80</span><span class="p">,</span><span class="mi">100</span><span class="p">))</span>
 
 <span class="c1"># Näillä riveillä ainoastaan määritellään otsikko sekä akseleiden tekstit.</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Invariantti massa [GeV/c²]&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Tapahtumien lukumäärä&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Kahden myonin invariantin massan histogrammi </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span> <span class="c1"># \n luo uuden rivin otsikon muotoilua varten</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Invariantti massa [GeV/c²]&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Tapahtumien lukumäärä&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Kahden myonin invariantin massan histogrammi </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span> <span class="c1"># \n luo uuden rivin otsikon muotoilua varten</span>
 
 <span class="c1"># Tehdään kuvaaja näkyväksi.</span>
 
@@ -722,14 +719,14 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Suoritetaan histogrammin piirtäminen myös J/psille.</span>
 
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">jpsi</span><span class="o">.</span><span class="n">M</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">jpsi</span><span class="o">.</span><span class="n">M</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">300</span><span class="p">)</span>
 
 <span class="c1"># Näillä riveillä ainoastaan määritellään otsikko sekä akseleiden tekstit.</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Invariantti massa [GeV/c²]&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Tapahtumien lukumäärä&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;J/$\psi$:n metsästys </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span> <span class="c1"># \n luo uuden rivin otsikon muotoilua varten</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Invariantti massa [GeV/c²]&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Tapahtumien lukumäärä&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;J/$\psi$:n metsästys </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span> <span class="c1"># \n luo uuden rivin otsikon muotoilua varten</span>
 
 <span class="c1"># Tehdään kuvaaja näkyväksi.</span>
 
@@ -745,14 +742,14 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vastaavasti puristettuna kiinnostavampaan piikkiin.</span>
 
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">jpsi</span><span class="o">.</span><span class="n">M</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mf">3.2</span><span class="p">))</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">jpsi</span><span class="o">.</span><span class="n">M</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span> <span class="nb">range</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mf">3.2</span><span class="p">))</span>
 
 <span class="c1"># Näillä riveillä ainoastaan määritellään otsikko sekä akseleiden tekstit.</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Invariantti massa [GeV/c²]&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Tapahtumien lukumäärä&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;J/$\psi$:n metsästys </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span> <span class="c1"># \n luo uuden rivin otsikon muotoilua varten</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Invariantti massa [GeV/c²]&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Tapahtumien lukumäärä&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;J/$\psi$:n metsästys </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span> <span class="c1"># \n luo uuden rivin otsikon muotoilua varten</span>
 
 <span class="c1"># Tehdään kuvaaja näkyväksi.</span>
 
@@ -761,7 +758,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/327bfd57ce168650cd3e442e394ae897ac2f6c97aef3c9295df5679c7c49b93c.png" src="../_images/327bfd57ce168650cd3e442e394ae897ac2f6c97aef3c9295df5679c7c49b93c.png" />
+<img alt="../_images/a97e18f513d862047e2eac6796577dcc469a57d14137825ca1acf2caf3d3f6a0.png" src="../_images/a97e18f513d862047e2eac6796577dcc469a57d14137825ca1acf2caf3d3f6a0.png" />
 </div>
 </div>
 </section>
@@ -780,14 +777,14 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">KorkeaEnergia</span><span class="o">.</span><span class="n">M</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Korkea E&#39;</span><span class="p">,</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">MatalaEnergia</span><span class="o">.</span><span class="n">M</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Matala E&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">KorkeaEnergia</span><span class="o">.</span><span class="n">M</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">300</span><span class="p">,</span> <span class="nb">range</span> <span class="o">=</span> <span class="p">(</span><span class="mi">80</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Korkea E&#39;</span><span class="p">,</span> <span class="n">facecolor</span> <span class="o">=</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">MatalaEnergia</span><span class="o">.</span><span class="n">M</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">300</span><span class="p">,</span> <span class="nb">range</span> <span class="o">=</span> <span class="p">(</span><span class="mi">80</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Matala E&#39;</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Invariantti massa [GeV/c²]&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Tapahtumien lukumäärä&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Kahden myonin invariantin massan histogrammi </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span> <span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Invariantti massa [GeV/c²]&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Tapahtumien lukumäärä&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Kahden myonin invariantin massan histogrammi </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span> <span class="p">(</span><span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;upper right&#39;</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -812,13 +809,13 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Mitenhän käy, jos jakoehdoksi laittaa vaikkapa 100?</p>
+<p>Mitenhän käy, jos jakoehdoksi laittaa vaikkapa 90 GeV? Mitä havaitaan, jos histogrammin alue alkaisikin jo matalasta päästä?</p>
 </section>
 <section id="pseudorapiditeetti">
 <h2>4. Pseudorapiditeetti<a class="headerlink" href="#pseudorapiditeetti" title="Permalink to this heading">#</a></h2>
 <p><img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Pseudorapidity_plot.svg/695px-Pseudorapidity_plot.svg.png"
 align = "left" style = "height:300px"></p>
-<p>Pseudorapiditeetti $\eta$ kuvaa havaitun hiukkasen poikkeamaa hiukkassuihkun suunnasta. Suuret, yli 2,5 arvot menevät niin suihkua pitkin, ettei niitä juurikaan saada mitattua, kun taas nollaa lähestyvät jäävät tarkimmin havainnointilaitteistoihin törmäysputken ympärillä.</p>
+<p>Pseudorapiditeetti $\eta$ (eetta) kuvaa havaitun hiukkasen poikkeamaa hiukkassuihkun suunnasta. Suuret, yli 2,5 arvot menevät niin suihkua pitkin, ettei niitä juurikaan saada mitattua, kun taas nollaa lähestyvät jäävät tarkimmin havainnointilaitteistoihin törmäysputken ympärillä.</p>
 <p>Pseudorapiditeetista $\eta \equiv -ln[tan\frac{\theta}{2}]$ saadaan myös näkyviin törmäystapahtumien kulmajakauma, mikäli se auttaa hahmottamaan tilannetta.</p>
 <p>Viereisessä kuvassa ajatellaan hiukkassuihkun kulkevan vaakasuuntaisesti vasemmalta oikealle.</p>
 <div class="cell docutils container">
@@ -827,22 +824,22 @@ align = "left" style = "height:300px"></p>
 <span class="n">prapJpsi</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">jpsi</span><span class="o">.</span><span class="n">eta1</span><span class="p">,</span><span class="n">jpsi</span><span class="o">.</span><span class="n">eta2</span><span class="p">])</span>
 
 <span class="n">kulmatMyonit</span> <span class="o">=</span> <span class="n">prapMyonit</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">kulmatMyonit</span><span class="p">[:]</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">arctan</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">*</span><span class="mi">360</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">kulmatMyonit</span><span class="p">]</span>
+<span class="n">kulmatMyonit</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">arctan</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">*</span><span class="mi">360</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">kulmatMyonit</span><span class="p">]</span>
 
 <span class="n">kulmatJpsi</span> <span class="o">=</span> <span class="n">prapJpsi</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">kulmatJpsi</span><span class="p">[:]</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">arctan</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">*</span><span class="mi">360</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">kulmatJpsi</span><span class="p">]</span>
+<span class="n">kulmatJpsi</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">arctan</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">*</span><span class="mi">360</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">kulmatJpsi</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">prapMyonit</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">prapMyonit</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="nb">range</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Pseudorapiditeetti&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Tapahtumien lukumäärä&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Jakauma </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Pseudorapiditeetti&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Tapahtumien lukumäärä&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Jakauma </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -854,12 +851,12 @@ align = "left" style = "height:300px"></p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">kulmatMyonit</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">180</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">180</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">kulmatMyonit</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">180</span><span class="p">,</span> <span class="nb">range</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">180</span><span class="p">))</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Kulma (deg)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Tapahtumien lukumäärä&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Jakauma </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Kulma (deg)&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Tapahtumien lukumäärä&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Jakauma </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -873,15 +870,15 @@ align = "left" style = "height:300px"></p>
 <p>Hiukkasilla on poikittaista liikemäärää $p_T$. Mistähän voisi johtua seuraava pseudorapiditeetin ja $p_T$:n välinen suhde?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
 <span class="n">poikittaiset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">kaksoismyonit</span><span class="o">.</span><span class="n">pt1</span><span class="p">,</span><span class="n">kaksoismyonit</span><span class="o">.</span><span class="n">pt2</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">prapMyonit</span><span class="p">,</span> <span class="n">poikittaiset</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">prapMyonit</span><span class="p">,</span> <span class="n">poikittaiset</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>
 
 <span class="c1">#plt.ylim(0,6) # aja solu ensin niin, että tämä rivi on kommentti. Poista sitten ensimmäinen risuaita ja aja uudestaan.</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Hiukkasten poikittaisliikemäärä $\eta$ suhteen </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Pseudorapiditeetti&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Poikittaisliikemäärä&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Hiukkasten poikittaisliikemäärä $\eta$ suhteen </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Pseudorapiditeetti&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Poikittaisliikemäärä&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -897,7 +894,7 @@ align = "left" style = "height:300px"></p>
 <p>Pseudorapiditeetti määrittää havainnoitujen hiukkasten suuntaa, joka osaltaan kertoo miten tarkkoja tuloksia voidaan saada. Teknisistä syistä $\eta = \left | 2,5 \right |$ on suunnilleen äärirajalla mittalaitteiden asemoinnin suhteen. Mitä keskemmälle mitta-asemaa havainnot tulevat, sitä tarkemmin niistä voidaan sanoa jotakin, kuten nähdään seuraavista kuvaajista.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">korkea</span> <span class="o">=</span> <span class="mf">1.5</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">korkea</span> <span class="o">=</span> <span class="mi">1</span>
 
 <span class="n">suuret_eetat</span> <span class="o">=</span> <span class="n">kaksoismyonit</span><span class="p">[(</span><span class="nb">abs</span><span class="p">(</span><span class="n">kaksoismyonit</span><span class="o">.</span><span class="n">eta1</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">korkea</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">kaksoismyonit</span><span class="o">.</span><span class="n">eta2</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">korkea</span><span class="p">)]</span>
 <span class="n">pienet_eetat</span> <span class="o">=</span> <span class="n">kaksoismyonit</span><span class="p">[(</span><span class="nb">abs</span><span class="p">(</span><span class="n">kaksoismyonit</span><span class="o">.</span><span class="n">eta1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">korkea</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">kaksoismyonit</span><span class="o">.</span><span class="n">eta2</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">korkea</span><span class="p">)]</span>
@@ -907,21 +904,21 @@ align = "left" style = "height:300px"></p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">suuret_eetat</span><span class="o">.</span><span class="n">M</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Korkea $\eta$&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">pienet_eetat</span><span class="o">.</span><span class="n">M</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Matala $\eta$&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">suuret_eetat</span><span class="o">.</span><span class="n">M</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">300</span><span class="p">,</span> <span class="nb">range</span> <span class="o">=</span> <span class="p">(</span><span class="mi">80</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Korkea $\eta$&#39;</span><span class="p">,</span> <span class="n">facecolor</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">pienet_eetat</span><span class="o">.</span><span class="n">M</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">300</span><span class="p">,</span> <span class="nb">range</span> <span class="o">=</span> <span class="p">(</span><span class="mi">80</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Matala $\eta$&#39;</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Invariantti massa [GeV/c²]&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Tapahtumien lukumäärä&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Invariantin massan histogrammi pseudorapiditeetin mukaan </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span> <span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Invariantti massa [GeV/c²]&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Tapahtumien lukumäärä&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Invariantin massan histogrammi pseudorapiditeetin mukaan </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span> <span class="p">(</span><span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;upper right&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/260bc9d963801cea17862d9aba5eef3e707e1d907b5e616a3340a5b0b23b85fe.png" src="../_images/260bc9d963801cea17862d9aba5eef3e707e1d907b5e616a3340a5b0b23b85fe.png" />
+<img alt="../_images/0382d721a61900b552eee0c4b8df72b42463a99ea3d240c579ff0dafa3b12de2.png" src="../_images/0382d721a61900b552eee0c4b8df72b42463a99ea3d240c579ff0dafa3b12de2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -932,8 +929,8 @@ align = "left" style = "height:300px"></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8491
-65518
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>27672
+34173
 </pre></div>
 </div>
 </div>
@@ -941,7 +938,7 @@ align = "left" style = "height:300px"></p>
 </section>
 <section id="sovitusta-ja-tilastoja">
 <h2>6. Sovitusta ja tilastoja<a class="headerlink" href="#sovitusta-ja-tilastoja" title="Permalink to this heading">#</a></h2>
-<p>Tällaista dataa voidaan käyttää yleisemmin myös motivaationa kvalitatiiviselle tilastojen lukutaidon herättelylle. Pythonissa on sisäänrakennettuja toimintoja esimerkiksi keskiarvojen, varianssin tai keskihajonnan laskemiseksi. Numeroiden ohessa tällaisen digitaalisen työkalun etuihin kuuluu myös kyky sovittaa havaintoihin vaikkapa normaalijakauma ja katsoa, miten hyvin ne vastaavat toisiaan.</p>
+<p>Suurten aineistojen käsittely kuvaajina auttaa niiden hahmottamisessa, mutta kuvien ohella tietokoneet ovat hyviä ilmiöitä kuvaavien sovitteiden etsimiseen sekä tilastollisten termien esiinkaivamiseen. Pythonissa on sisäänrakennettuja toimintoja esimerkiksi keskiarvojen, varianssin tai keskihajonnan laskemiseksi. Moneen havaintojoukkoon voi koettaa sovittaa tyypillisiä perusjakaumia, kuten normaalijakaumaa.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alaraja</span> <span class="o">=</span> <span class="mi">87</span>
@@ -949,7 +946,7 @@ align = "left" style = "height:300px"></p>
 
 <span class="n">pala</span> <span class="o">=</span> <span class="n">kaksoismyonit</span><span class="p">[(</span><span class="n">kaksoismyonit</span><span class="o">.</span><span class="n">M</span> <span class="o">&gt;</span> <span class="n">alaraja</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">kaksoismyonit</span><span class="o">.</span><span class="n">M</span> <span class="o">&lt;</span> <span class="n">ylaraja</span><span class="p">)]</span>
 
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
 
 <span class="n">esite_ala</span> <span class="o">=</span> <span class="mi">80</span>
 <span class="n">esite_yla</span> <span class="o">=</span> <span class="mi">100</span>
@@ -959,14 +956,14 @@ align = "left" style = "height:300px"></p>
 <span class="n">kerroin</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">pala</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">alue</span><span class="p">)</span>
 <span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">pala</span><span class="o">.</span><span class="n">M</span><span class="p">)</span>
 
-<span class="n">n</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">patches</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">kaksoismyonit</span><span class="o">.</span><span class="n">M</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="n">density</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">facecolor</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;stepfilled&#39;</span><span class="p">,</span>
-                            <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="n">esite_ala</span><span class="p">,</span><span class="n">esite_yla</span><span class="p">))</span>
+<span class="n">n</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">patches</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">kaksoismyonit</span><span class="o">.</span><span class="n">M</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="n">density</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">facecolor</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.75</span><span class="p">,</span> <span class="n">histtype</span> <span class="o">=</span> <span class="s1">&#39;stepfilled&#39;</span><span class="p">,</span>
+                            <span class="nb">range</span> <span class="o">=</span> <span class="p">(</span><span class="n">esite_ala</span><span class="p">,</span><span class="n">esite_yla</span><span class="p">))</span>
 
 <span class="n">y</span> <span class="o">=</span> <span class="n">kerroin</span><span class="o">*</span><span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span> <span class="n">bins</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
-<span class="n">l</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;r--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">l</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;r--&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Massa [GeV/$c^2$]&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Tapahtuman todennäköisyys&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Massa [GeV/$c^2$]&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Tapahtuman todennäköisyys&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\mathrm{Histogrammi\ invarianteista\ massoista\ normeerattuna\ ykköseen:}\ \mu=</span><span class="si">%.3f</span><span class="s1">,\ \sigma=</span><span class="si">%.3f</span><span class="s1">$&#39;</span>
           <span class="o">%</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span><span class="n">sigma</span><span class="p">),</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
@@ -977,6 +974,84 @@ align = "left" style = "height:300px"></p>
 </div>
 <div class="cell_output docutils container">
 <img alt="../_images/7298d669b5487c57621d9b2deae9f5a610992089e828087d714b3deceb6aed9d.png" src="../_images/7298d669b5487c57621d9b2deae9f5a610992089e828087d714b3deceb6aed9d.png" />
+</div>
+</div>
+<p>Hiukkasfysiikan tarpeisiin normaalijakauma on kuitenkin väärä työkalu, vaikka satunnaisesti näyttäisikin soveltuvan yksittäisiin paikkoihin. Poisson-jakauma olisi asteen parempi, mutta tyypillisesti käytetään Breit-Wigner -jakaumaa:</p>
+<p>$$
+N(E) = \frac{K}{(E-M)^2 + \frac{\Gamma^2}{4}}
+$$</p>
+<p>jossa $E$ on energia, $M$ piikin huippukohta, $\Gamma$ jakauman luonnollinen leveys ja $K$ vakio. Resonanssissa havaitun hiukkasen elinaika $\tau$ liittyy jakauman leveyteen seuraavasti:</p>
+<p>$$
+\Gamma \equiv \frac{\hbar}{\tau}
+$$</p>
+<p>Voit kokeilla B-W-sovitusta alla eri kohtiin aineistoa. Rajojen siirtäminen vaatii myös alkuarvojen huippukohdan siirtämistä.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ensin määritetään tarkastelualueen rajat ja tarkkuus.</span>
+
+<span class="n">lowerlimit</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">upperlimit</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">bins</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="c1"># Haetaan aineisto. </span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+    <span class="s1">&#39;https://raw.githubusercontent.com/cms-opendata-education/cms-jupyter-materials-finnish/master/Data/Dimuon_DoubleMu.csv&#39;</span><span class="p">)</span>
+<span class="n">i_mass</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">M</span>
+<span class="n">hist</span><span class="p">,</span> <span class="n">edges</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">i_mass</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="nb">range</span> <span class="o">=</span> <span class="p">(</span><span class="n">lowerlimit</span><span class="p">,</span> <span class="n">upperlimit</span><span class="p">))</span>
+
+<span class="c1"># Määritetään funktio jakaumalle.</span>
+
+<span class="k">def</span> <span class="nf">breitwigner</span><span class="p">(</span><span class="n">E</span><span class="p">,</span> <span class="n">gamma</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">A</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">*</span><span class="n">E</span><span class="o">+</span><span class="n">b</span><span class="o">+</span><span class="n">A</span><span class="o">*</span><span class="p">(</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">M</span><span class="o">*</span><span class="n">gamma</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">M</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">M</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">gamma</span><span class="o">**</span><span class="mi">2</span><span class="p">)))</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">M</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">M</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">M</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">gamma</span><span class="o">**</span><span class="mi">2</span><span class="p">))))</span> <span class="p">)</span><span class="o">/</span><span class="p">((</span><span class="n">E</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="n">M</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">M</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">gamma</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
+
+<span class="c1"># Annetaan koneelle alkuarvot ja iteroidaan pari kertaa parantaen sovitusta.</span>
+
+<span class="c1">#initials = [1, 91, -1, 200, 13000] # Z-bosonille 90 GeVin kieppeillä</span>
+<span class="n">initials</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">3.1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">13000</span><span class="p">]</span> <span class="c1"># J/psi 3 GeVin kieppeillä</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">lowerlimit</span><span class="p">,</span> <span class="n">upperlimit</span><span class="p">,</span> <span class="n">bins</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">hist</span>
+
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="n">popt</span><span class="p">,</span> <span class="n">pcov</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">breitwigner</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">p0</span> <span class="o">=</span> <span class="n">initials</span><span class="p">,</span> <span class="n">sigma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+    <span class="n">initials</span> <span class="o">=</span> <span class="n">popt</span>
+    <span class="c1">#print(initials) for checking up</span>
+    
+<span class="n">error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">pcov</span><span class="p">))</span> 
+
+<span class="c1"># Piirretään kuvaajat ja printataan tilastolliset tiedot näkyviin.</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">i_mass</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="nb">range</span> <span class="o">=</span> <span class="p">(</span><span class="n">lowerlimit</span><span class="p">,</span><span class="n">upperlimit</span><span class="p">),</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Alkuperäinen histogrammi&quot;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">breitwigner</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="n">popt</span><span class="p">),</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Breit-Wigner -sovitus&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span> <span class="o">=</span> <span class="s2">&quot;upper right&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Invariantti massa (GeV)&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Tapahtumien lukumäärä </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Hiukkanen on hajonnut kahdeksi myoniksi </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tämän hiukkasen massa on: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">popt</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">+</span> <span class="sa">u</span><span class="s2">&quot; </span><span class="se">\u00B1</span><span class="s2"> &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">error</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot; GeV&quot;</span><span class="p">)</span>
+
+<span class="n">tau_high</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">popt</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">error</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">tau_low</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">popt</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">error</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">var</span> <span class="o">=</span> <span class="p">(</span><span class="n">tau_high</span> <span class="o">-</span> <span class="n">tau_low</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">tau</span> <span class="o">=</span> <span class="n">tau_high</span> <span class="o">-</span> <span class="n">var</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tämän hiukkasen elinaika on: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">tau</span><span class="p">)</span> <span class="o">+</span> <span class="sa">u</span><span class="s2">&quot; </span><span class="se">\u00B1</span><span class="s2"> &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">var</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; GeV^-1&quot;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/fdb4f76455fe2b6583df58cb4efe62a1c5eb088974aeb20b57a77bcae36b1114.png" src="../_images/fdb4f76455fe2b6583df58cb4efe62a1c5eb088974aeb20b57a77bcae36b1114.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tämän hiukkasen massa on: 3.0942088781215977 ± 0.001210341006419428 GeV
+Tämän hiukkasen elinaika on: 21.865056540308995 ± 1.1700486803971408 GeV^-1
+</pre></div>
+</div>
 </div>
 </div>
 </section>
