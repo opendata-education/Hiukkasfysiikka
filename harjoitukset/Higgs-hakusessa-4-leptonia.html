@@ -1,0 +1,1087 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Higgsiä metsästämässä - esimerkki tutkimuksesta &#8212; Hiukkasfysiikka</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'harjoitukset/Higgs-hakusessa-4-leptonia';</script>
+    <link rel="canonical" href="https://opendata-education.github.io/Hiukkasfysiikka/intro.html/harjoitukset/Higgs-hakusessa-4-leptonia.html" />
+    <link rel="shortcut icon" href="../_static/logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Alkeet" href="alkeet.html" />
+    <link rel="prev" title="Törmäysten visualisointi" href="2_CMS-visualisointi.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Tervetuloa avoimen datan pariin
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="tutustu_aiheeseen.html">Tutustu aiheeseen</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1_HiukkasfysiikanTutkimus.html">Mitä on hiukkasfysiikka?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cms_data.html">CMS ja avoin data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_CMS-visualisointi.html">Törmäysten visualisointi</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Higgsiä metsästämässä - esimerkki tutkimuksesta</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="alkeet.html">Alkeet</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="01_LaskeInvarianttiMassa.html">1. Laske invariantti massa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_HistogramminPiirto.html">2. Histogrammin piirto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_DatanValitseminenHistogrammiin.html">3. Datan valitseminen histogrammiin</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/opendata-education/Hiukkasfysiikka/main?urlpath=tree/materiaali/harjoitukset/Higgs-hakusessa-4-leptonia.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/opendata-education/Hiukkasfysiikka/blob/main/materiaali/harjoitukset/Higgs-hakusessa-4-leptonia.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/opendata-education/Hiukkasfysiikka" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/opendata-education/Hiukkasfysiikka/issues/new?title=Issue%20on%20page%20%2Fharjoitukset/Higgs-hakusessa-4-leptonia.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/harjoitukset/Higgs-hakusessa-4-leptonia.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Higgsiä metsästämässä - esimerkki tutkimuksesta</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="higgsia-metsastamassa-esimerkki-tutkimuksesta">
+<h1>Higgsiä metsästämässä - esimerkki tutkimuksesta<a class="headerlink" href="#higgsia-metsastamassa-esimerkki-tutkimuksesta" title="Permalink to this heading">#</a></h1>
+<p>Tässä harjoitteessa käydään läpi miten Higgsin bosonia etsittiin ja miten tieteellinen tutkimus usein toimii.</p>
+<p>Käytetty data on aitoa, merkityksellistä mittausdataa kokeista, joissa <a class="reference external" href="https://fi.wikipedia.org/wiki/Higgsin_bosoni">Higgsin bosonin</a> olemassaolo todistettiin. Tätä seurasikin sitten pian Nobelin palkinto. Nyt tuo data on myös sinun tutkittavanasi sen sijaan, että se piilottelisi jossain valmiiden kuvien takana.</p>
+<p>Metodi on hyvin yleispätevä ja käytössä monilla tieteenaloilla. Kun meillä on jonkinlaista teoriapohjaa, voimme tehdä mittauksia ja vertailla tuloksia oletuksiimme. Ehkäpä tulokset vahvistavat odotuksemme, kenties niistä nousee uusia kysymyksiä, voi olla että joudumme korjaamaan teorioitamme tai jopa kehittämään aivan uusia selittääksemme havainnot. Tämä sykli sitten toistuu uudelleen ja uudelleen porautuessamme syvemmälle luonnon toimintaan.</p>
+<p>Aloitetaanpa Higgsin bosonin metsästys!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tuodaan tarvittavat paketit</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tässä haetaan CERN:n avoin data portaalista useita eri datatiedostoja</span>
+<span class="c1"># Mitä enemmän dataa, sitä varmempia tuloksia Higgsin löytymisestä voimme saada!</span>
+<span class="c1"># Tähän dataan palataan pian.</span>
+
+<span class="n">csvs</span> <span class="o">=</span> <span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;http://opendata.cern.ch/record/5200/files/4mu_2011.csv&#39;</span><span class="p">),</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;http://opendata.cern.ch/record/5200/files/4e_2011.csv&#39;</span><span class="p">),</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;http://opendata.cern.ch/record/5200/files/2e2mu_2011.csv&#39;</span><span class="p">)]</span>
+<span class="n">csvs</span> <span class="o">+=</span> <span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;http://opendata.cern.ch/record/5200/files/4mu_2012.csv&#39;</span><span class="p">),</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;http://opendata.cern.ch/record/5200/files/4e_2012.csv&#39;</span><span class="p">),</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;http://opendata.cern.ch/record/5200/files/2e2mu_2012.csv&#39;</span><span class="p">)]</span>
+
+<span class="n">fourlep</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">csvs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Standardimallin ennusteiden mukaan Higgsin bosoni voi hajota mm. siten, että siitä syntyy ensin kaksi Z-bosonia ja niistä edelleen neljä leptonia (elektroneja, myoneja…). Neljä leptonia voi kuitenkin syntyä myös monista muista prosesseista, jotka vaikeuttavat tehtäväämme Higgsin bosonin metsästyksessä. Nämä muut prosessit ovat analyysissämme siis taustakohinaa, josta meidän tulisi erottaa ne prosessit, joissa Higgsin hiukkanen on ollut osallisena. Teoria itsessään ei kerro paljoakaan siitä, mikä Higgsin hiukkasen massa voisi olla, mutta valistuneilla arvauksilla päästään aika pitkälle. Esimerkiksi hiukkasen hajoaminen neljään leptoniin on todennäköisempää tietyillä massoilla, joten kohdistetaan etsintämme näihin massoihin.</p>
+<p>Tarkoituksenamme on siis tutkia törmäyksessä syntyneille neljälle leptonille laskettua invarianttia massaa tekemällä usean törmäyksen datasta histogrammi.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tutkitaan sellaisia tapahtumia, joissa neljälle leptonille laskettu invariantti massa</span>
+<span class="c1"># on välillä 70 GeV - 181 GeV </span>
+
+<span class="n">rmin</span> <span class="o">=</span> <span class="mi">70</span>
+<span class="n">rmax</span> <span class="o">=</span> <span class="mi">181</span>
+<span class="n">nbins</span> <span class="o">=</span> <span class="mi">37</span>
+
+<span class="n">hist</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">patches</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">fourlep</span><span class="p">[</span><span class="s1">&#39;M&#39;</span><span class="p">],</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">nbins</span><span class="p">,</span> <span class="nb">range</span> <span class="o">=</span> <span class="p">(</span><span class="n">rmin</span><span class="p">,</span><span class="n">rmax</span><span class="p">))</span>
+
+<span class="n">width</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">*</span><span class="p">(</span><span class="n">bins</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">bins</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">center</span> <span class="o">=</span> <span class="p">(</span><span class="n">bins</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">bins</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="o">/</span> <span class="mi">2</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;4l invariantti massa (GeV)&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Tapahtumia</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/b91adccc38a5734c68a4387766d721d51908e509b5a90f5f7332df9fa865b130.png" src="../_images/b91adccc38a5734c68a4387766d721d51908e509b5a90f5f7332df9fa865b130.png" />
+</div>
+</div>
+<p>Histogrammissa näkyy joitakin massan alueita, joissa on enemmän tapahtumia kuin muissa, mutta emme pysty kuitenkaan tekemään varmoja johtopäätöksiä Higgsin olemassaolosta tästä kuvasta.</p>
+<p>Otetaan tutkimuksemme avuksi simulaatioita. Jos tunnemme joitain prosesseja, joita törmäyksissä tapahtuu, voimme vertailla niiden odotettavia tuloksia varsinaisiin mittauksiimme. Alla on <a class="reference external" href="https://fi.wikipedia.org/wiki/Monte_Carlo_-simulaatio">Monte Carlo</a>-menetelmillä tuotettuja arvoja, jotka on painotettu luminositeetin, poikkileikkauksen ja tapahtumien määrän mukaan. Periaatteessa niissä on siis luotu satunnaisvaihtelulla maustettua dataa, jollaista voisi saada oikeastakin mittauksesta, niin että kyseinen joukko noudattaa samanlaista jakaumaa kuin kyseisen prosessin on mitattu tuottavan.</p>
+<p>Simulaatiodata vastaa siis eri “hajoamiskanavista” peräisin olevien neljän leptonin massajakaumia.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.354797</span><span class="p">,</span><span class="mf">0.177398</span><span class="p">,</span><span class="mf">2.60481</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.177398</span><span class="p">,</span><span class="mf">0.177398</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.177398</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.177398</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">ttbar</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.00465086</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.00465086</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.00465086</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.00465086</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.00465086</span><span class="p">,</span><span class="mf">0.00465086</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.0139526</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.00465086</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.00465086</span><span class="p">,</span><span class="mf">0.00465086</span><span class="p">,</span><span class="mf">0.0139526</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">zz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.181215</span><span class="p">,</span><span class="mf">0.257161</span><span class="p">,</span><span class="mf">0.44846</span><span class="p">,</span><span class="mf">0.830071</span><span class="p">,</span><span class="mf">1.80272</span><span class="p">,</span><span class="mf">4.57354</span><span class="p">,</span><span class="mf">13.9677</span><span class="p">,</span><span class="mf">14.0178</span><span class="p">,</span><span class="mf">4.10974</span><span class="p">,</span><span class="mf">1.58934</span><span class="p">,</span><span class="mf">0.989974</span><span class="p">,</span><span class="mf">0.839775</span><span class="p">,</span><span class="mf">0.887188</span><span class="p">,</span><span class="mf">0.967021</span><span class="p">,</span><span class="mf">1.07882</span><span class="p">,</span><span class="mf">1.27942</span><span class="p">,</span><span class="mf">1.36681</span><span class="p">,</span><span class="mf">1.4333</span><span class="p">,</span><span class="mf">1.45141</span><span class="p">,</span><span class="mf">1.41572</span><span class="p">,</span><span class="mf">1.51464</span><span class="p">,</span><span class="mf">1.45026</span><span class="p">,</span><span class="mf">1.47328</span><span class="p">,</span><span class="mf">1.42899</span><span class="p">,</span><span class="mf">1.38757</span><span class="p">,</span><span class="mf">1.33561</span><span class="p">,</span><span class="mf">1.3075</span><span class="p">,</span><span class="mf">1.29831</span><span class="p">,</span><span class="mf">1.31402</span><span class="p">,</span><span class="mf">1.30672</span><span class="p">,</span><span class="mf">1.36442</span><span class="p">,</span><span class="mf">1.39256</span><span class="p">,</span><span class="mf">1.43472</span><span class="p">,</span><span class="mf">1.58321</span><span class="p">,</span><span class="mf">1.85313</span><span class="p">,</span><span class="mf">2.19304</span><span class="p">,</span><span class="mf">2.95083</span><span class="p">])</span>
+<span class="n">hzz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.00340992</span><span class="p">,</span><span class="mf">0.00450225</span><span class="p">,</span><span class="mf">0.00808944</span><span class="p">,</span><span class="mf">0.0080008</span><span class="p">,</span><span class="mf">0.00801578</span><span class="p">,</span><span class="mf">0.0108945</span><span class="p">,</span><span class="mf">0.00794274</span><span class="p">,</span><span class="mf">0.00950757</span><span class="p">,</span><span class="mf">0.0130648</span><span class="p">,</span><span class="mf">0.0163568</span><span class="p">,</span><span class="mf">0.0233832</span><span class="p">,</span><span class="mf">0.0334813</span><span class="p">,</span><span class="mf">0.0427229</span><span class="p">,</span><span class="mf">0.0738129</span><span class="p">,</span><span class="mf">0.13282</span><span class="p">,</span><span class="mf">0.256384</span><span class="p">,</span><span class="mf">0.648352</span><span class="p">,</span><span class="mf">2.38742</span><span class="p">,</span><span class="mf">4.87193</span><span class="p">,</span><span class="mf">0.944299</span><span class="p">,</span><span class="mf">0.155005</span><span class="p">,</span><span class="mf">0.0374193</span><span class="p">,</span><span class="mf">0.0138906</span><span class="p">,</span><span class="mf">0.00630364</span><span class="p">,</span><span class="mf">0.00419265</span><span class="p">,</span><span class="mf">0.00358719</span><span class="p">,</span><span class="mf">0.00122527</span><span class="p">,</span><span class="mf">0.000885718</span><span class="p">,</span><span class="mf">0.000590479</span><span class="p">,</span><span class="mf">0.000885718</span><span class="p">,</span><span class="mf">0.000797085</span><span class="p">,</span><span class="mf">8.86337e-05</span><span class="p">,</span><span class="mf">0.000501845</span><span class="p">,</span><span class="mf">8.86337e-05</span><span class="p">,</span><span class="mf">0.000546162</span><span class="p">,</span><span class="mf">4.43168e-05</span><span class="p">,</span><span class="mf">8.86337e-05</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vilkaistaas millaisia muotoja nämä tuottavat ja miten ne suhtautuvat kiihdyttimessä mitattuihin tuloksiin.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ZZ, pari raskaampaa bosonia.</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">zz</span><span class="p">,</span> <span class="n">align</span> <span class="o">=</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="n">width</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">edgecolor</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;4l invariantti massa (GeV)&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Tapahtumia / 3 GeV</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">rmin</span><span class="p">,</span><span class="n">rmax</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/c698af07d499e0165e9d93e13b99c7d5efb889ae700b7a734111ef0f6f81e472.png" src="../_images/c698af07d499e0165e9d93e13b99c7d5efb889ae700b7a734111ef0f6f81e472.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># DY, yksittäisistä Z-bosoneista koostuvia tapahtumia.</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="n">align</span> <span class="o">=</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="n">width</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">edgecolor</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;4l invariantti massa (GeV)&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Tapahtumia / 3 GeV</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">rmin</span><span class="p">,</span><span class="n">rmax</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/a8a72ce031b0678b232307f3716baebc038423534b10e25f7d6d8363a3c81786.png" src="../_images/a8a72ce031b0678b232307f3716baebc038423534b10e25f7d6d8363a3c81786.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ttbar, top- ja antitopkvarkkien pari.</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">ttbar</span><span class="p">,</span> <span class="n">align</span> <span class="o">=</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="n">width</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">edgecolor</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;4l invariantti massa (GeV)&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Tapahtumia / 3 GeV </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">rmin</span><span class="p">,</span><span class="n">rmax</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/3fdc0f2a620f8ba382df543bceb16c34645fbc58c0b541a41bbb2500eaa26746.png" src="../_images/3fdc0f2a620f8ba382df543bceb16c34645fbc58c0b541a41bbb2500eaa26746.png" />
+</div>
+</div>
+<p>Lyödään askeiset päällekäin ja tarkastellaan, miltä voisimme olettaa tulostemme näyttävän.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># ttbar </span>
+<span class="n">ttbar_bar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">ttbar</span><span class="p">,</span> <span class="n">align</span> <span class="o">=</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="n">width</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">edgecolor</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span>
+                    <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;$t\bar</span><span class="si">{t}</span><span class="s1">$&#39;</span><span class="p">)</span>
+
+<span class="c1"># DY</span>
+<span class="n">dy_bar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="n">align</span> <span class="o">=</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="n">width</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">edgecolor</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span>
+                 <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">bottom</span> <span class="o">=</span> <span class="n">ttbar</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Z/$\gamma^{*}$ + X&#39;</span><span class="p">)</span>
+
+<span class="c1"># ZZ</span>
+<span class="n">zz_bar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">zz</span><span class="p">,</span> <span class="n">align</span> <span class="o">=</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="n">width</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">edgecolor</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span>
+                 <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">bottom</span> <span class="o">=</span> <span class="n">ttbar</span><span class="o">+</span><span class="n">dy</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;ZZ $\rightarrow$ 4l&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;$ \sqrt</span><span class="si">{s}</span><span class="s1"> = 7$ TeV, L = 2.3 $fb^{-1}$; $\sqrt</span><span class="si">{s}</span><span class="s1"> = 8$ TeV, L = 11.6 $fb^{-1}$ </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$m_</span><span class="si">{4l}</span><span class="s1">$ (GeV)&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Tapahtumia / 3 GeV</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">rmin</span><span class="p">,</span><span class="n">rmax</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/f37fe6de14e0db2637af2bbbe439ef490366c43ee0100b97804d2c12f26e9332.png" src="../_images/f37fe6de14e0db2637af2bbbe439ef490366c43ee0100b97804d2c12f26e9332.png" />
+</div>
+</div>
+<p>Selvästi ainakin 90 GeVin tietämillä on tapahtumia, mikä käy järkeen huomioiden suurimman osan tuloksista syntyvän Z-bosonien kautta, joiden massa on noin 90 GeV. Otetaanpa sitten mukaan myös itse mittaukset. Miten hyvin kuvat vastaavat toisiaan?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="n">xerrs</span> <span class="o">=</span> <span class="p">[</span><span class="n">width</span><span class="o">*</span><span class="mf">0.5</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">nbins</span><span class="p">)]</span>
+<span class="n">yerrs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">hist</span><span class="p">)</span>
+
+<span class="c1"># ttbar </span>
+<span class="n">ttbar_bar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">ttbar</span><span class="p">,</span> <span class="n">align</span> <span class="o">=</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="n">width</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">edgecolor</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span>
+                    <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;$t\bar</span><span class="si">{t}</span><span class="s1">$&#39;</span><span class="p">)</span>
+
+<span class="c1"># DY</span>
+<span class="n">dy_bar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="n">align</span> <span class="o">=</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="n">width</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">edgecolor</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span>
+                 <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">bottom</span> <span class="o">=</span> <span class="n">ttbar</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Z/$\gamma^{*}$ + X&#39;</span><span class="p">)</span>
+
+<span class="c1"># ZZ</span>
+<span class="n">zz_bar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">zz</span><span class="p">,</span> <span class="n">align</span> <span class="o">=</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="n">width</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">edgecolor</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span>
+                 <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">bottom</span> <span class="o">=</span> <span class="n">ttbar</span><span class="o">+</span><span class="n">dy</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;ZZ $\rightarrow$ 4l&#39;</span><span class="p">)</span>
+
+<span class="c1"># Mittaukset.</span>
+<span class="n">data_bar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">hist</span><span class="p">,</span> <span class="n">xerr</span> <span class="o">=</span> <span class="n">xerrs</span><span class="p">,</span> <span class="n">yerr</span> <span class="o">=</span> <span class="n">yerrs</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;None&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span>
+                        <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Data&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;$ \sqrt</span><span class="si">{s}</span><span class="s1"> = 7$ TeV, L = 2.3 $fb^{-1}$; $\sqrt</span><span class="si">{s}</span><span class="s1"> = 8$ TeV, L = 11.6 $fb^{-1}$ </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$m_</span><span class="si">{4l}</span><span class="s1">$ (GeV)&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Tapahtumia / 3 GeV</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">rmin</span><span class="p">,</span><span class="n">rmax</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/5ad4a0cbed9a991c0e14c5314c11d83b6265f4bad46df6a40ae50e51f881aa56.png" src="../_images/5ad4a0cbed9a991c0e14c5314c11d83b6265f4bad46df6a40ae50e51f881aa56.png" />
+</div>
+</div>
+<p>Kaikki mittapisteet eivät selvästikään selity tuntemillamme taustaprosesseilla. Vertailua varten fyysikot laskivat hajontoja Higgsin bosonille lähtien eri massaisista oletuksista. Tässä näytetään, millainen hajonta tuolla hiukkasella olisi, jos Higgsin massa olisi suunnilleen 125 GeV.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># HZZ, teoreettinen oletus Higgsin bosonin muodolle 125 GeVin kohdalla.</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">hzz</span><span class="p">,</span> <span class="n">align</span> <span class="o">=</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="n">width</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">edgecolor</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;4l invariantti massa (GeV)&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Tapahtumia / 3 GeV</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">rmin</span><span class="p">,</span><span class="n">rmax</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/a83256b374ca1dd1ffe2ef51c38e7c67dd3ac627cf86c531f5587bd2f8a5da1f.png" src="../_images/a83256b374ca1dd1ffe2ef51c38e7c67dd3ac627cf86c531f5587bd2f8a5da1f.png" />
+</div>
+</div>
+<p>Bonuskysymys: miten jokin, jolla on 125 GeVin massa, voi hajota kahdeksi Z-bosoniksi, jonka massa on yli 90 GeViä?</p>
+<p>Lisätääs tämäkin tulos kokonaiskuvaan.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># ttbar </span>
+<span class="n">ttbar_bar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">ttbar</span><span class="p">,</span> <span class="n">align</span> <span class="o">=</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="n">width</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">edgecolor</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span>
+                    <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;$t\bar</span><span class="si">{t}</span><span class="s1">$&#39;</span><span class="p">)</span>
+
+<span class="c1"># DY</span>
+<span class="n">dy_bar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="n">align</span> <span class="o">=</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="n">width</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">edgecolor</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span>
+                 <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">bottom</span> <span class="o">=</span> <span class="n">ttbar</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Z/$\gamma^{*}$ + X&#39;</span><span class="p">)</span>
+
+<span class="c1"># ZZ</span>
+<span class="n">zz_bar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">zz</span><span class="p">,</span> <span class="n">align</span> <span class="o">=</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="n">width</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">edgecolor</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span>
+                 <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">bottom</span> <span class="o">=</span> <span class="n">ttbar</span><span class="o">+</span><span class="n">dy</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;ZZ $\rightarrow$ 4l&#39;</span><span class="p">)</span>
+
+<span class="c1"># HZZ</span>
+<span class="n">hzz_bar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">hzz</span><span class="p">,</span> <span class="n">align</span> <span class="o">=</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="n">width</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">edgecolor</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span>
+                  <span class="n">bottom</span> <span class="o">=</span> <span class="n">ttbar</span><span class="o">+</span><span class="n">dy</span><span class="o">+</span><span class="n">zz</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;$m_</span><span class="si">{H}</span><span class="s1">$ = 125 GeV&#39;</span><span class="p">)</span>
+
+<span class="c1"># Mittaukset.</span>
+<span class="n">data_bar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">hist</span><span class="p">,</span> <span class="n">xerr</span> <span class="o">=</span> <span class="n">xerrs</span><span class="p">,</span> <span class="n">yerr</span> <span class="o">=</span> <span class="n">yerrs</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;None&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span>
+                        <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Data&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;$ \sqrt</span><span class="si">{s}</span><span class="s1"> = 7$ TeV, L = 2.3 $fb^{-1}$; $\sqrt</span><span class="si">{s}</span><span class="s1"> = 8$ TeV, L = 11.6 $fb^{-1}$ </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$m_</span><span class="si">{4l}</span><span class="s1">$ (GeV)&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Tapahtumia / 3 GeV</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">rmin</span><span class="p">,</span><span class="n">rmax</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/feaa1add03b7d08674303c011a59b836465e967428f530a0ef45e189ed0749aa.png" src="../_images/feaa1add03b7d08674303c011a59b836465e967428f530a0ef45e189ed0749aa.png" />
+</div>
+</div>
+<p>Otos vaikuttaa hitusen pieneltä, mitä se toki puhtaasti numeromäärältään onkin, mutta se antaa silti valaisevan vilkaisun siihen, kuinka tutkimustyötä tehdään. Kovin moni hajoamisprosessi ei tuota lopputilassa neljää leptonia, joten edes näin monen pisteen saaminen käsittää suunnilleen puolet kaikesta julkisesti saatavilla olevasta datasta vuoden 2011-2012 kokeesta. Lisäinfoa mittauksista voi löytää <a class="reference external" href="http://opendata.cern.ch/record/5500">täältä</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Jos dataa haluaa tarkastella lähemmin, siitä löytää tietoja kaikista havainnoiduista neljästä hiukkasesta.</span>
+
+<span class="n">pd</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">max_columns</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">fourlep</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Run</th>
+      <th>Event</th>
+      <th>PID1</th>
+      <th>E1</th>
+      <th>px1</th>
+      <th>py1</th>
+      <th>pz1</th>
+      <th>pt1</th>
+      <th>eta1</th>
+      <th>phi1</th>
+      <th>Q1</th>
+      <th>PID2</th>
+      <th>E2</th>
+      <th>px2</th>
+      <th>py2</th>
+      <th>pz2</th>
+      <th>pt2</th>
+      <th>eta2</th>
+      <th>phi2</th>
+      <th>Q2</th>
+      <th>PID3</th>
+      <th>E3</th>
+      <th>px3</th>
+      <th>py3</th>
+      <th>pz3</th>
+      <th>pt3</th>
+      <th>eta3</th>
+      <th>phi3</th>
+      <th>Q3</th>
+      <th>PID4</th>
+      <th>E4</th>
+      <th>px4</th>
+      <th>py4</th>
+      <th>pz4</th>
+      <th>pt4</th>
+      <th>eta4</th>
+      <th>phi4</th>
+      <th>Q4</th>
+      <th>mZ1</th>
+      <th>mZ2</th>
+      <th>M</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>173657</td>
+      <td>34442568</td>
+      <td>13</td>
+      <td>35.9978</td>
+      <td>32.7631</td>
+      <td>-4.41922</td>
+      <td>-14.2436</td>
+      <td>33.0598</td>
+      <td>-0.418519</td>
+      <td>-0.134075</td>
+      <td>-1</td>
+      <td>-13</td>
+      <td>29.0804</td>
+      <td>-19.31050</td>
+      <td>-5.31425</td>
+      <td>21.0837</td>
+      <td>20.0284</td>
+      <td>0.918146</td>
+      <td>-2.873040</td>
+      <td>1</td>
+      <td>13</td>
+      <td>17.3154</td>
+      <td>-10.87010</td>
+      <td>-3.64596</td>
+      <td>12.9753</td>
+      <td>11.46530</td>
+      <td>0.971505</td>
+      <td>-2.81797</td>
+      <td>-1</td>
+      <td>-13</td>
+      <td>11.49390</td>
+      <td>-1.20978</td>
+      <td>11.35650</td>
+      <td>1.29029</td>
+      <td>11.42070</td>
+      <td>0.112739</td>
+      <td>1.676920</td>
+      <td>1</td>
+      <td>62.5513</td>
+      <td>20.5205</td>
+      <td>91.4517</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>166512</td>
+      <td>337493970</td>
+      <td>13</td>
+      <td>52.9826</td>
+      <td>-49.9170</td>
+      <td>8.17082</td>
+      <td>15.7696</td>
+      <td>50.5813</td>
+      <td>0.306925</td>
+      <td>2.979340</td>
+      <td>-1</td>
+      <td>13</td>
+      <td>72.1018</td>
+      <td>15.32840</td>
+      <td>21.35470</td>
+      <td>-67.1392</td>
+      <td>26.2866</td>
+      <td>-1.667150</td>
+      <td>0.948222</td>
+      <td>-1</td>
+      <td>-13</td>
+      <td>89.7552</td>
+      <td>10.34670</td>
+      <td>-20.27240</td>
+      <td>86.8214</td>
+      <td>22.76010</td>
+      <td>2.048740</td>
+      <td>-1.09888</td>
+      <td>1</td>
+      <td>-13</td>
+      <td>30.21620</td>
+      <td>2.32913</td>
+      <td>-13.06840</td>
+      <td>27.14400</td>
+      <td>13.27430</td>
+      <td>1.463510</td>
+      <td>-1.394420</td>
+      <td>1</td>
+      <td>92.1352</td>
+      <td>90.2049</td>
+      <td>235.8800</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>171091</td>
+      <td>69105221</td>
+      <td>13</td>
+      <td>165.9750</td>
+      <td>-12.6280</td>
+      <td>-30.22890</td>
+      <td>162.7100</td>
+      <td>32.7605</td>
+      <td>2.305880</td>
+      <td>-1.966510</td>
+      <td>-1</td>
+      <td>-13</td>
+      <td>68.1611</td>
+      <td>6.93837</td>
+      <td>22.85760</td>
+      <td>63.8382</td>
+      <td>23.8875</td>
+      <td>1.709440</td>
+      <td>1.276090</td>
+      <td>1</td>
+      <td>-13</td>
+      <td>19.5056</td>
+      <td>4.71517</td>
+      <td>8.50412</td>
+      <td>16.9087</td>
+      <td>9.72383</td>
+      <td>1.320370</td>
+      <td>1.06454</td>
+      <td>1</td>
+      <td>13</td>
+      <td>24.83870</td>
+      <td>-8.09683</td>
+      <td>3.05681</td>
+      <td>23.28190</td>
+      <td>8.65464</td>
+      <td>1.715610</td>
+      <td>2.780600</td>
+      <td>-1</td>
+      <td>58.3874</td>
+      <td>14.3541</td>
+      <td>79.3858</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>172952</td>
+      <td>559839432</td>
+      <td>13</td>
+      <td>110.2600</td>
+      <td>-69.1510</td>
+      <td>68.83630</td>
+      <td>-51.3524</td>
+      <td>97.5720</td>
+      <td>-0.504613</td>
+      <td>2.358470</td>
+      <td>-1</td>
+      <td>13</td>
+      <td>88.3199</td>
+      <td>85.94400</td>
+      <td>-16.81970</td>
+      <td>-11.4510</td>
+      <td>87.5743</td>
+      <td>-0.130388</td>
+      <td>-0.193263</td>
+      <td>-1</td>
+      <td>-13</td>
+      <td>45.0987</td>
+      <td>-19.98280</td>
+      <td>-29.14080</td>
+      <td>-28.0247</td>
+      <td>35.33410</td>
+      <td>-0.727298</td>
+      <td>-2.17188</td>
+      <td>1</td>
+      <td>-13</td>
+      <td>9.79377</td>
+      <td>3.02072</td>
+      <td>8.34856</td>
+      <td>-4.13324</td>
+      <td>8.87824</td>
+      <td>-0.450186</td>
+      <td>1.223630</td>
+      <td>1</td>
+      <td>91.1877</td>
+      <td>37.3758</td>
+      <td>232.9290</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>167282</td>
+      <td>44166176</td>
+      <td>-13</td>
+      <td>54.3881</td>
+      <td>-27.4999</td>
+      <td>-43.86520</td>
+      <td>-16.6628</td>
+      <td>51.7726</td>
+      <td>-0.316533</td>
+      <td>-2.130770</td>
+      <td>1</td>
+      <td>13</td>
+      <td>39.8417</td>
+      <td>31.53530</td>
+      <td>18.85330</td>
+      <td>15.4088</td>
+      <td>36.7413</td>
+      <td>0.407975</td>
+      <td>0.538835</td>
+      <td>-1</td>
+      <td>-13</td>
+      <td>20.3208</td>
+      <td>3.30081</td>
+      <td>16.01250</td>
+      <td>12.0677</td>
+      <td>16.34910</td>
+      <td>0.683619</td>
+      <td>1.36750</td>
+      <td>1</td>
+      <td>13</td>
+      <td>6.83735</td>
+      <td>4.64276</td>
+      <td>-2.38618</td>
+      <td>4.41465</td>
+      <td>5.22007</td>
+      <td>0.767963</td>
+      <td>-0.474752</td>
+      <td>-1</td>
+      <td>90.7513</td>
+      <td>14.7350</td>
+      <td>119.2900</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Huomaamme selvästi, että 125 GeVin kieppeillä tapahtuu jotain oletustemme lisäksi. Tuloksemme ovat melko samansuuntaisia kuin varsinaiset CMS:n analyysitkin, erojen noustessa pääasiassa käyttämiemme menetelmien karkeudesta.
+<img src = 'https://inspirehep.net/files/6d3aa0c4fbefece34158f7f0c6e2e818' align = 'right'></p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./harjoitukset"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="2_CMS-visualisointi.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Törmäysten visualisointi</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="alkeet.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Alkeet</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By HIP Education and Open Data Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <div>
+<a>Toteutettu Opetushallituksen valtionavustuksella tiedekasvatuksen edistämiseen.</a></br><a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img class="license" alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> Tämän sivuston materiaali on käytettävissä seuraavalla lisenssillä: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY 4.0.</a>
+</div>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
