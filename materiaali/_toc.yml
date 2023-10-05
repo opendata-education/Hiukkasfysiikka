@@ -8,6 +8,7 @@ chapters:
   - file: harjoitukset/1_HiukkasfysiikanTutkimus
   - file: harjoitukset/cms_data
   - file: harjoitukset/2_CMS-visualisointi
+  - file: harjoitukset/Higgs-hakusessa-4-leptonia
 - file: harjoitukset/alkeet
   sections:
   - file: harjoitukset/01_LaskeInvarianttiMassa
